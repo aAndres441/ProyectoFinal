@@ -12,6 +12,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class ProductoListComponent implements OnInit {
   public productos$: Observable<Producto[]>;
   public producto: Producto;
+  private showImage = false;
 
   constructor( private productoService: ProductoService, private router: Router ) {  }
 
@@ -30,6 +31,10 @@ export class ProductoListComponent implements OnInit {
     this.router.navigate(['producto']);  // cuando elimine va a la ruta producto listado
     // this.router.navigate(['producto/add']);
     //routerLink="/producto/edit/{{p.id}}" 
+  }
+
+  toggleImage(): void {
+    this.showImage = !this.showImage;
   }
   
 

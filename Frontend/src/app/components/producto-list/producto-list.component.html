@@ -22,31 +22,36 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Nombre</th>
-      <th scope="col">Imagen</th>
+      <th scope="col"> <button class='btn btn-primary' (click)='toggleImage()'>
+          {{showImage ? 'Hide' : 'Show'}} Image
+        </button>
+        Imagen</th>
       <th scope="col">Descrip</th>
       <th scope="col">TmStmp</th>
       <th scope="col">Operaciones</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let p of productos$ | async ">
-      <th>{{p.id}}</th>
-      <td>{{p.nombre}}</td>
-      <td><img [src]="p.imagen" alt="imagen x" class="card-img-top"></td>
-     <!-- //<img [src]="g.imagen" alt="" class="card-img-top"> {{p.imagen}}-->
-      <td>{{p.descripcion}}</td>
-      <td>{{p.tmstmp}}</td>
-      <td>
-        <button class="btn" (click)="eliminar(p.id)"><i class="fa fa-trash"></i></button>
-        <button class="btn" routerLink="/producto/edit/{{p.id}}" ><i class="fa fa-edit"></i></button> <!--nos lleva e la ruta con parametro-->
-      </td>
-    </tr>
+      <tr *ngFor="let p of productos$ | async ">
+        <th>{{p.id}}</th>
+        <td>{{p.nombre}}</td>
+        <td *ngIf='showImage'>
+          <img [src]="p.imagen" alt="imagen x" class="card-img-top"></td>
+        <!-- //<img [src]="g.imagen" alt="" class="card-img-top"> {{p.imagen}}-->
+        <td>{{p.descripcion}}</td>
+        <td>{{p.tmstmp  | date}}</td>
+        <td>
+          <button class="btn" (click)="eliminar(p.id)"><i class="fa fa-trash"></i></button>
+          <button class="btn" routerLink="/producto/edit/{{p.id}}"><i class="fa fa-edit"></i></button>
+          <!--nos lleva e la ruta con parametro-->
+        </td>
+      </tr>
     </tbody>
-  
-  </table>
-  <ng-template #cargando>
+    
+    </table>
+    <ng-template #cargando>
       <div>
-        <h3>CARGANDO..</h3> 
+        <h3>CARGANDO..</h3>
         <i class="fa fa-spin fa-spinner fa-3x"></i>
       </div>
     </ng-template>
