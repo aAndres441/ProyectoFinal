@@ -21,7 +21,7 @@ export class ProductoService {
   private producto : Producto;
   public productos$: BehaviorSubject<Producto[]> = new BehaviorSubject([]);
 
-  constructor(private http:HttpClient) { 
+  constructor(private http: HttpClient) {
     this.getProductos().subscribe(
       prods => {
         this.productos = prods;
@@ -51,12 +51,12 @@ export class ProductoService {
   }
 
   saveProducto(prod: Producto) {
-    console.log( ' Servicio lo guardo ' + prod.nombre );
-    /*return this.http.post<Producto>(environment.API_BASE + 'producto/', prod).subscribe((p: Producto) => {
+    
+    return this.http.post<Producto>(environment.API_BASE + 'producto/', prod).subscribe((p: Producto) => {
       this.productos.push(p);
       this.notificarCambios();
     });
-    */
+    console.log( ' Servicio lo guardo ' + prod.nombre );
   }
 
   deleteProducto( id: string | number){

@@ -22,6 +22,7 @@ export class ProductoListComponent implements OnInit {
 
   getProductos(){
     this.productos$ = this.productoService.getProductos();
+    console.log('A veeer');
     console.log(this.productos$);
   }
   eliminar(id: string) {
