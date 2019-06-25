@@ -42,7 +42,7 @@ export class ProductoService {
   }
 
 
-  getOneProducto( id: string) {
+  getOneProducto( id: string | number) {  // id: string | number
     return this.http.get<Producto>(environment.API_BASE + 'producto/' + id).subscribe(
       producto => {
         this.producto = producto;
@@ -51,11 +51,12 @@ export class ProductoService {
   }
 
   saveProducto(prod: Producto) {
-    console.log(prod);
-    return this.http.post<Producto>(environment.API_BASE + 'producto/', prod).subscribe((p: Producto) => {
+    console.log( ' Servicio lo guardo ' + prod.nombre );
+    /*return this.http.post<Producto>(environment.API_BASE + 'producto/', prod).subscribe((p: Producto) => {
       this.productos.push(p);
       this.notificarCambios();
     });
+    */
   }
 
   deleteProducto( id: string | number){

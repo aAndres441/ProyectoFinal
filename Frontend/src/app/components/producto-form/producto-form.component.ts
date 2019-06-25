@@ -34,34 +34,47 @@ export class ProductoFormComponent implements OnInit {
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.params[' id'];  //traigo y guardo los parametros
+
     this.productos$ = this.productoService.productos$;
     if (id) {
-      // this.productoService.getOneProducto(id);
-      // this.edit = true;
-      console.log('EDITAR el producto de id ' + id + '--' + this.edit ) 
+      this.productoService.getOneProducto(id);
+      console.log('EDITAR el producto de id ' + id);
     } else {
-      console.log('AGREGAR el producto de id ' + id + '--' + this.edit ) 
-      //this.producto = new Producto();
+      console.log('AGREGA un producto  nuevo');
+      this.producto = new Producto();
+      this.edit = true;
     }
   }
+  /**/
 
   guardar() {
+    console.log(this.edit + ' se guardara el ' + this.producto.nombre);
+
     this.productoService.saveProducto(this.producto);
     this.router.navigateByUrl('/producto/add');
-    // console.log(this.producto);
+
+    this.edit = false;
     this.router.navigate(['producto']);  // cuando guarda va a la ruta producto listado
   }
 
   editProducto(){
    // console.log(this.producto);
-    this.productoService.updateProducto(this.producto.id, this.producto);
-    this.router.navigate(['producto']);  // cuando actualize, anda a la ruta producto listado
+   
+  console.log (this.edit + ' edita');
+  //this.edit ? false : true ;
+   this.edit = true;
+
+
+   // this.productoService.updateProducto(this.producto.id, this.producto);
+   // this.router.navigate(['producto']);  // cuando actualize, anda a la ruta producto listado
+
   //   this.productoService.updateProducto(this.producto.id, this.producto).subscribe{
   //     res =>{
   //       console.log(res);
   //     },
   //     err=>(console.log(err)
   //   }
+
 
    }
 
