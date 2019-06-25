@@ -1,8 +1,8 @@
 export default{
     database: {
-        host: 'localhost',
-        user: 'root',
-        password: '',
-        database:'barracadb'   //ng_prueba_db
+        host: 'aa1v5oaurv6oyc5.cjhnbwblq7zm.us-east-2.rds.amazonaws.com',  //'localhost',
+        user: 'BarracaCardona',  //'root',
+        password: 'BarracaCardona', //'',
+        database: 'barracadb'   //ng_prueba_db
     }
 }
