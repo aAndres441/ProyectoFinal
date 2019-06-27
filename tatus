@@ -1,0 +1,35 @@
+[33mcommit 72bb15526e00410e16de35918afe2ec91bb1c144[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Fenix <andrarias@gmail.com>
+Date:   Tue Jun 25 20:28:56 2019 -0300
+
+    nueva coneccion prueba
+
+[33mcommit 2b679ac4ca6a180c7498fe7295bc2e89ad669fa4[m
+Author: Fenix <andrarias@gmail.com>
+Date:   Tue Jun 25 17:35:29 2019 -0300
+
+    endpoint agregado
+
+[33mcommit 241e4725123166edd3c70716c78389c907f4b12e[m
+Author: Fenix <andrarias@gmail.com>
+Date:   Tue Jun 25 16:36:56 2019 -0300
+
+    agrega boolean para editar
+
+[33mcommit 702cef5f5afc1522f121ee34b4e4d05a2a7f36a5[m
+Author: Fenix <andrarias@gmail.com>
+Date:   Tue Jun 25 14:47:14 2019 -0300
+
+    button
+
+[33mcommit cfaadfc03cb577c1e79fa2f9fb7ad5ebc089647e[m[33m ([m[1;32mcolon[m[33m)[m
+Author: Fenix <andrarias@gmail.com>
+Date:   Sun Jun 23 18:33:42 2019 -0300
+
+    agrega pipe en time stamp
+
+[33mcommit 515a3d8465134504d2ddb5f88b9227c18e7fdb29[m
+Author: Fenix <andrarias@gmail.com>
+Date:   Sat Jun 22 21:53:18 2019 -0300
+
+    primer comit
