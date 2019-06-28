@@ -23,9 +23,12 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Nombre</th>
-      <th scope="col"> <button class='btn btn-primary' (click)='toggleImage()'>
+      <th scope="col"> <!-- --><button class='btn btn-primary' (click)='toggleImage()'>
         {{showImage ? 'Hide' : 'Show'}} Image
-      </button></th>
+      </button>
+    
+    Image
+  </th>
       <th scope="col">Descrip</th>
       <th scope="col">TmStmp</th>
       <th scope="col">Operaciones</th>
@@ -36,7 +39,7 @@
         <th>{{p.id}}</th>
         <td>{{p.nombre}}</td>
         <td *ngIf='showImage'>
-          <img [src]="p.imagen" alt="imagen x" class="card-img-top"></td>
+          <img [src]="p.imagen" alt="imagen xxx" class="card-img-top"></td>
         <!-- //<img [src]="g.imagen" alt="" class="card-img-top"> {{p.imagen}}-->
         <td>{{p.descripcion}}</td>
         <td>{{p.tmstmp  | date}}</td>
