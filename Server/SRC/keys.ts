@@ -1,9 +1,9 @@
 export default{
     database: {
-        host: 'dbbarraca.cjhnbwblq7zm.us-east-2.rds.amazonaws.com',  //'localhost',  // barracabasedatos.cjhnbwblq7zm.us-east-2.rds.amazonaws.com
-        user: 'BarracaCardonaDB',  //BarracaBaseDatos//'root',BarracaCardona  // baseBarraca
-        password: 'BarracaCardonaDB', //'', //BarracaBaseDatos // BarracaCardona  //  baseBarraca
-        database:  'BarracaCardonaDB' //ebdb // 'barracadb'   //  'ng_prueba_db  //  baseBarraca
+        host: 'barracabase.cjhnbwblq7zm.us-east-2.rds.amazonaws.com',  //'localhost', //dbbarraca.cjhnbwblq7zm.us-east-2.rds.amazonaws.com // barracabasedatos.cjhnbwblq7zm.us-east-2.rds.amazonaws.com
+        user: 'BarracaBase',  //BarracaBaseDatos//'root',BarracaCardona  // baseBarraca
+        password: 'BarracaBase', //'', //BarracaBaseDatos // BarracaCardona  //  baseBarraca
+        database:  'BarracaBase' //ebdb // 'barracadb'   //  'ng_prueba_db  //  baseBarraca
        // port:'3306'
     }
 }
