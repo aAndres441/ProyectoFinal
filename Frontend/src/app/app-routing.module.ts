@@ -2,7 +2,6 @@ import { ProductoFormComponent } from './components/producto-form/producto-form.
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ProductoListComponent } from './components/producto-list/producto-list.component'
 
 const routes: Routes = [
   {
@@ -11,20 +10,12 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'producto',
-    component: ProductoListComponent
-  },
-  {
     path: 'producto/add',
     component: ProductoFormComponent
   },
   {
     path: 'producto/edit/:id',
     component: ProductoFormComponent
-  },
-  {
-    path: 'producto/getOne/:id',
-    component: ProductoListComponent
   }
 ];
 

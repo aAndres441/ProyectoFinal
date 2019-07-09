@@ -6,21 +6,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { ProductoFormComponent } from './components/producto-form/producto-form.component';
-import { ProductoListComponent } from './components/producto-list/producto-list.component';
 
 import {ProductoService} from './services/producto.service';
 import { ListComponent } from './components/shared/list/list.component';
 import { AltaComponent } from './components/shared/alta/alta.component';
 import { ProductFormComponent } from './pages/product/components/product-form/product-form.component';
 import { ProductComponent } from './pages/product/container/product/product.component';
-import { ProductListComponent } from './pages/product/component/product-list/product-list.component';
+import { ProductListComponent } from './pages/product/components/product-list/product-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     ProductoFormComponent,
-    ProductoListComponent,
     ListComponent,
     AltaComponent,
     ProductFormComponent,
