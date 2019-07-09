@@ -11,6 +11,9 @@ import { ProductoListComponent } from './components/producto-list/producto-list.
 import {ProductoService} from './services/producto.service';
 import { ListComponent } from './components/shared/list/list.component';
 import { AltaComponent } from './components/shared/alta/alta.component';
+import { ProductFormComponent } from './pages/product/components/product-form/product-form.component';
+import { ProductComponent } from './pages/product/container/product/product.component';
+import { ProductListComponent } from './pages/product/component/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { AltaComponent } from './components/shared/alta/alta.component';
     ProductoFormComponent,
     ProductoListComponent,
     ListComponent,
-    AltaComponent
+    AltaComponent,
+    ProductFormComponent,
+    ProductComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

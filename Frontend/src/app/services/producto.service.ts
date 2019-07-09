@@ -18,7 +18,7 @@ export interface ProductList {
 export class ProductoService {
 
   private productos: Producto[] = [];
-  private producto : Producto;
+  private producto: Producto;
   public productos$: BehaviorSubject<Producto[]> = new BehaviorSubject([]);
 
   constructor(private http: HttpClient) {
@@ -51,7 +51,6 @@ export class ProductoService {
   }
 
   saveProducto(prod: Producto) {
-    
     return this.http.post<Producto>(environment.API_BASE + 'producto/', prod).subscribe((p: Producto) => {
       this.productos.push(p);
       this.notificarCambios();
