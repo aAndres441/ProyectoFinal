@@ -13,7 +13,7 @@ import { ListComponent } from './components/shared/list/list.component';
 import { AltaComponent } from './components/shared/alta/alta.component';
 import { ProductFormComponent } from './pages/product/components/product-form/product-form.component';
 import { ProductComponent } from './pages/product/container/product/product.component';
-import { ProductListComponent } from './pages/product/component/product-list/product-list.component';
+import { ProductListComponent } from './pages/product/components/product-list/product-list.component';
 
 @NgModule({
   declarations: [
