@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { ProductoFormComponent } from './components/producto-form/producto-form.component';
-import { ProductoListComponent } from './components/producto-list/producto-list.component';
 
 import {ProductoService} from './services/producto.service';
 import { ListComponent } from './components/shared/list/list.component';
@@ -20,7 +19,6 @@ import { ProductListComponent } from './pages/product/components/product-list/pr
     AppComponent,
     NavigationComponent,
     ProductoFormComponent,
-    ProductoListComponent,
     ListComponent,
     AltaComponent,
     ProductFormComponent,
