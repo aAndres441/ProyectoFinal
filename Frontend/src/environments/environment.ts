@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_BASE: 'http://localhost:3000/api/'  //'http://localhost:3000/api/'  //aa1v5oaurv6oyc5.cjhnbwblq7zm.us-east-2.rds.amazonaws.com
+  API_BASE: 'http://localhost:3000/api/'  // 'http://localhost:3000/api/'  //aa1v5oaurv6oyc5.cjhnbwblq7zm.us-east-2.rds.amazonaws.com
 };
 
 /*

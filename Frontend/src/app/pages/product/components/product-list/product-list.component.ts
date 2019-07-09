@@ -1,15 +1,16 @@
-import { Producto } from './../../models/producto';
 import { Component, OnInit } from '@angular/core';
-import { ProductoService } from '../../services/producto.service'
+import { Producto } from 'src/app/models/producto';
 import { Observable } from 'rxjs';
-import {ActivatedRoute, Router} from '@angular/router';
+import { ProductoService } from 'src/app/services/producto.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-producto-list',
-  templateUrl: './producto-list.component.html',
-  styleUrls: ['./producto-list.component.css']
+  selector: 'app-product-list',
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.css']
 })
-export class ProductoListComponent implements OnInit {
+export class ProductListComponent implements OnInit {
+
   public productos$: Observable<Producto[]>;
   public producto: Producto;
   private showImage = false;
