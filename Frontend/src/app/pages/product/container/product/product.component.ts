@@ -1,4 +1,7 @@
+import { ProductoService } from 'src/app/services/producto.service';
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../../model/product.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -7,9 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {
+  products : Array<Product>;
+  
+  constructor( private productoService: ProductoService, private router: Router ) { }
+
+  
+  ngOnInit(): void {
+    this.getProductos();
   }
 
+  getProductos():void{
+    this.productoService.getProductos().subscribe(
+      (products : Array<Product>) => this.products = products
+    );
+  }
+  
+  eliminar(id: string) {
+    //console.log(id);
+    //this.productoService.deleteProducto(id);
+    // this.router.navigateByUrl('/producto/add');
+    this.router.navigate(['producto']);  // cuando elimine va a la ruta producto listado
+    // this.router.navigate(['producto/add']);
+    //routerLink="/producto/edit/{{p.id}}" 
+  }
+  onSubmitForm(form: any): void {
+    
+  } 
+ 
 }

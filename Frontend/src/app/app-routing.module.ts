@@ -1,6 +1,7 @@
-import { ProductoFormComponent } from './components/producto-form/producto-form.component';
+
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ProductFormComponent } from './pages/product/components/product-form/product-form.component';
 
 
 const routes: Routes = [
@@ -11,11 +12,11 @@ const routes: Routes = [
   },
   {
     path: 'producto/add',
-    component: ProductoFormComponent
+    component: ProductFormComponent
   },
   {
     path: 'producto/edit/:id',
-    component: ProductoFormComponent
+    component: ProductFormComponent
   }
 ];
 

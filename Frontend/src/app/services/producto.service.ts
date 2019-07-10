@@ -1,15 +1,10 @@
 import { Injectable } from '@angular/core';
-
 import {HttpClient } from '@angular/common/http';//para las peticiones
-
-import { Producto } from '../models/producto'
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-
-export interface ProductList {
-  prods: Producto[];
-}
+import { ProductSerializer } from '../serializers/product-serializer';
+import { Product } from '../pages/product/model/product.model'
 
 @Injectable({
   providedIn: 'root'
@@ -17,12 +12,10 @@ export interface ProductList {
 
 export class ProductoService {
 
-  private productos: Producto[] = [];
-  private producto: Producto;
-  public productos$: BehaviorSubject<Producto[]> = new BehaviorSubject([]);
+  private producto: ProductSerializer;
 
   constructor(private http: HttpClient) {
-    this.getProductos().subscribe(
+    /* this.getProductos().subscribe(
       prods => {
         this.productos = prods;
         localStorage.setItem('producto', JSON.stringify(prods));
@@ -30,18 +23,18 @@ export class ProductoService {
       }, error => {
         this.productos = JSON.parse(localStorage.getItem('producto'));
         this.notificarCambios();
-      });
+      }); */
   }
 
 
-  getProductos(): Observable<Producto[]> {
-    return this.http.get<ProductList>(environment.API_BASE + 'producto')
+  getProductos(): Observable<Array<Product>> {
+    return this.http.get<Array<Array<Product>>>(environment.API_BASE + 'producto')
       .pipe(
-        map(productList => productList.prods)
+        map(data => data.pop().map(item => this.producto.fromJson(item)))
       );
   }
 
-
+/* 
   getOneProducto( id: string | number) {  // id: string | number
     return this.http.get<Producto>(environment.API_BASE + 'producto/' + id).subscribe(
       producto => {
@@ -75,5 +68,5 @@ export class ProductoService {
 
   notificarCambios(){
     this.productos$.next(this.productos);
-  }
+  } */
 }
