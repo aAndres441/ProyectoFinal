@@ -1,1 +1,8 @@
-<p>product works!</p>
+
+<app-product-list 
+    [products]="products"
+    (submit)="onSubmitForm($event)">
+</app-product-list>
+<app-product-form
+    (submit)="onSubmitForm($event)">
+</app-product-form>
