@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
 import { Product } from '../../model/product.model';
+
 
 @Component({
   selector: 'app-product-list',
@@ -9,21 +9,21 @@ import { Product } from '../../model/product.model';
 })
 export class ProductListComponent implements OnInit {
 
-/*   public productos$: Observable<Product[]>;
-  public producto: Product;
-  private showImage = false; */
-  @Input() products : Array<Product>;
+  /*   public productos$: Observable<Product[]>;
+    public producto: Product;
+    private showImage = false; */
+  @Input() products: Array<Product>;
   @Output() submitFormNotification = new EventEmitter<any>();
-  
-  
-  constructor() {  }
+
+
+  constructor() { }
 
   ngOnInit() {
   }
 
- /*  toggleImage(): void {
-    this.showImage = !this.showImage;
-  } */
+  /*  toggleImage(): void {
+     this.showImage = !this.showImage;
+   } */
   onSubmit(): void {
     this.submitFormNotification.emit(this.products);
   }

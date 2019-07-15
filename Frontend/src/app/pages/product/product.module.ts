@@ -7,10 +7,10 @@ import { ProductComponent } from './container';
 const APP_COMPONENTS_PRODUCTS = [
   ProductFormComponent,
   ProductListComponent
-]
+];
 const APP_CONTAINERS_PRODUCTS = [
   ProductComponent
-]
+];
 
 @NgModule({
   declarations: [

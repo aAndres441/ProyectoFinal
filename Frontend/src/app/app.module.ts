@@ -10,6 +10,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import {ProductoService} from './services/producto.service';
 import { ListComponent } from './components/shared/list/list.component';
 import { AltaComponent } from './components/shared/alta/alta.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AltaComponent } from './components/shared/alta/alta.component';
     NavigationComponent,
     ListComponent,
     AltaComponent,
-    ProductModule
+    ProductModule,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
