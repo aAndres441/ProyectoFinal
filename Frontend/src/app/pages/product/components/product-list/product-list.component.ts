@@ -12,7 +12,8 @@ export class ProductListComponent implements OnInit {
   /*   public productos$: Observable<Product[]>;
     public producto: Product;
     private showImage = false; */
-  @Input() products: Array<Product>;
+    
+  @Input() products: Product [];  // Array<Product>;
   @Output() submitFormNotification = new EventEmitter<any>();
 
 

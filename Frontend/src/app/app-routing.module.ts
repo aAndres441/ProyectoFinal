@@ -1,14 +1,19 @@
 
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { ProductFormComponent } from './pages/product/components/product-form/product-form.component';
-import { ProductListComponent } from './pages/product/components/product-list/product-list.component';
+// import { ProductListComponent } from './pages/product/components/product-list/product-list.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ProductListComponent } from './pages/product/components';
+import { ProductComponent } from './pages/product/container/product/product.component';
+import { ProductModule } from './pages/product/product.module';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'producto',  // determinada para cuando se carga la app
+    redirectTo: 'productos',  // determinada para cuando se carga la app
     pathMatch: 'full'
   },
 
@@ -18,8 +23,8 @@ const routes: Routes = [
   }, */
 
   {
-    path: 'producto',
-    component: ProductListComponent  // renderiza componente importado
+    path: 'productos',
+    component: HomeComponent  // renderiza componente importado
   },
 
   {
@@ -33,7 +38,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),
+    FormsModule ,
+    ReactiveFormsModule ,
+   ProductModule
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

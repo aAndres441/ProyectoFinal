@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../../model/product.model';
-import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators} from '@angular/forms';
+
 @Component({
   selector: 'app-product-form',
   templateUrl: './product-form.component.html',
@@ -8,9 +9,10 @@ import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } 
 })
 export class ProductFormComponent implements OnInit {
   @Input() product: Product;
+  @Output() submitFormNotification =  new EventEmitter < FormGroup > ();
 
   productForm: FormGroup;
-
+items;
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -23,6 +25,13 @@ export class ProductFormComponent implements OnInit {
   }
   onSubmit(): void {
     const form: Product = Object.assign({}, this.product);
+    console.warn('Your order has been submitted', form);
+
+    if(this.productForm.valid) {
+      this.submitFormNotification.emit(this.productForm.value);
+      console.log(form.nombre.toUpperCase());
+    }
+    // this.productForm.reset();
   }
 
   guardar() {
