@@ -2,6 +2,7 @@ import { ProductoService } from 'src/app/services/producto.service';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../model/product.model';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product',
@@ -10,9 +11,10 @@ import { Router } from '@angular/router';
 })
 export class ProductComponent implements OnInit {
 
+  $products:Observable<Product[]>
+  products : Product[];
+  showForm:boolean = false;
 
-  products : Array<Product>;
-  
   constructor( private productoService: ProductoService, private router: Router ) { }
 
   
@@ -22,7 +24,11 @@ export class ProductComponent implements OnInit {
 
   getProductos():void{
     this.productoService.getProductos().subscribe(
-      (products : Array<Product>) => this.products = products
+      
+      (json) => {
+        this.products = json
+        console.log(this.products)
+      }
     );
   }
   

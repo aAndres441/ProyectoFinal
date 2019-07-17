@@ -12,8 +12,8 @@ import { Product } from '../pages/product/model/product.model'
 
 export class ProductoService {
 
-  private producto: ProductSerializer;
-
+  private productSerializer : ProductSerializer;
+  private products : Product[] = [];
   constructor(private http: HttpClient) {
     /* this.getProductos().subscribe(
       prods => {
@@ -27,11 +27,13 @@ export class ProductoService {
   }
 
 
-  getProductos(): Observable<Array<Product>> {
-    return this.http.get<Array<Array<Product>>>(environment.API_BASE + 'producto')
-      .pipe(
-        map(data => data.pop().map(item => this.producto.fromJson(item)))
-      );
+  getProductos(): Observable<Product[]> {
+    return this.http.get<Product[]>(environment.API_BASE + 'producto').pipe(
+      map(
+          json => json as any,
+          json => this.products.push(this.productSerializer.fromJson(json))
+      )
+    )
   }
 
 /* 

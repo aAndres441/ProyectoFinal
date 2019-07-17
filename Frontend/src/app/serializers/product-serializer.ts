@@ -7,8 +7,7 @@ export class ProductSerializer {
             nombre : json.nombre,
             imagen: json.imagen,
             descripcion: json.descripcion,
-            tmstmp : json.tmstmp,
-            precio : json.precio
+            tmstmp : json.tmstmp
         };
         return product;
     }
