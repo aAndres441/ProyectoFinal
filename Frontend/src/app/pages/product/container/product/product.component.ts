@@ -24,7 +24,6 @@ export class ProductComponent implements OnInit {
 
   getProductos():void{
     this.productoService.getProductos().subscribe(
-      
       (json) => {
         this.products = json
         console.log(this.products)
