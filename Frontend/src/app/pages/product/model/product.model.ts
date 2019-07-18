@@ -3,6 +3,5 @@ export interface Product {
     nombre : string,
     imagen? : string,
     descripcion? : string,
-    tmstmp? : Date,
-    precio? : number,
+    tmstmp? : Date
 }

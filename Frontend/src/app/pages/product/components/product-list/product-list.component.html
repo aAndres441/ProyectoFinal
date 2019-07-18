@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div>
   <h2>PRODUCTOS</h2>
   <li *ngFor="let p of products" >
@@ -7,3 +8,25 @@
     <button type="submit" (click)="showList()" class="btn btn-primary btn-sm btn-block" >Nuevo</button>
   </div>
 </div>
+=======
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>nombre</th>
+      <th>imagen</th>
+      <th>descripcion</th>
+      <th>tmstmp</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let p of products" >
+    <tr>
+      <td>{{p.id}}</td>
+      <td>{{p.nombre}}</td>
+      <td>{{p.imagen}}</td>
+      <td>{{p.descripcion}}</td>
+      <td>{{p.tmstmp}}</td>
+    </tr>
+  </tbody>
+</table>
+>>>>>>> 6662af9c6284c725cab8c2d0224cfde03c6d250d

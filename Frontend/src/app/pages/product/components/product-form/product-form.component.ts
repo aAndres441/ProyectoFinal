@@ -15,6 +15,7 @@ export class ProductFormComponent implements OnInit {
   constructor(private fb : FormBuilder) { }
 
   ngOnInit() {
+    
     this.productForm = this.fb.group({
       nombre : ['',Validators.required],
       imagen : ['', Validators.required],

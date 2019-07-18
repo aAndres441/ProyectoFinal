@@ -22,7 +22,11 @@ export class ProductComponent implements OnInit {
   }
 
   getProductos():void{
+<<<<<<< HEAD
     /* this.productoService.getProductos().subscribe(
+=======
+    this.productoService.getProductos().subscribe(
+>>>>>>> 6662af9c6284c725cab8c2d0224cfde03c6d250d
       (json) => {
         this.products = json
         console.log(this.products)
