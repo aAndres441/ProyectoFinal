@@ -1,8 +1,9 @@
-
-<app-product-list *ngIf="!showForm else list" #list
-    [products]="products"
-    (submit)="onSubmitForm($event)">
-</app-product-list >
-<app-product-form  *ngIf="showForm else form" #form
-    (submit)="onSubmitForm($event)">
-</app-product-form>
+<div class="card">
+    <app-product-list *ngIf="!showForm else list" #list
+        [products]="products"
+        (showListForm)="onSubmit($event)">
+    </app-product-list >
+    <app-product-form  *ngIf="showListForm else form" #form
+        (showListForm)="onSubmit($event)">
+    </app-product-form>
+</div>

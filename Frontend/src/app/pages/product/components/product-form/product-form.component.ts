@@ -9,8 +9,7 @@ import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 })
 export class ProductFormComponent implements OnInit {
   @Input() product : Product;
-  @Output() submitFormNotification = new EventEmitter<FormGroup>();
-  
+  @Output() showListForm = new EventEmitter<any>();
   productForm:FormGroup;
 
   constructor(private fb : FormBuilder) { }
@@ -25,8 +24,9 @@ export class ProductFormComponent implements OnInit {
   }
   
   onSubmit(): void {
+    this.showListForm.emit(false);
     if (this.productForm.valid) {
-      this.submitFormNotification.emit(this.productForm.value);
+      //this.onSubmit.emit();
     }
   }
 
@@ -48,4 +48,5 @@ export class ProductFormComponent implements OnInit {
   get tmstmp (){
     return this.productForm.get('tmstmp');
   }
+
 }

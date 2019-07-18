@@ -13,8 +13,7 @@ export class ProductComponent implements OnInit {
 
   $products:Observable<Product[]>
   products : Product[];
-  showForm:boolean = false;
-
+  showListForm:boolean;
   constructor( private productoService: ProductoService, private router: Router ) { }
 
   
@@ -23,13 +22,12 @@ export class ProductComponent implements OnInit {
   }
 
   getProductos():void{
-    this.productoService.getProductos().subscribe(
-      
+    /* this.productoService.getProductos().subscribe(
       (json) => {
         this.products = json
         console.log(this.products)
       }
-    );
+    ); */
   }
   
   eliminar(id: string) {
@@ -40,8 +38,8 @@ export class ProductComponent implements OnInit {
     // this.router.navigate(['producto/add']);
     //routerLink="/producto/edit/{{p.id}}" 
   }
-  onSubmitForm(form: any): void {
-    
+  onSubmit(bool:boolean):void {
+    this.showListForm = bool;
   } 
  
 }

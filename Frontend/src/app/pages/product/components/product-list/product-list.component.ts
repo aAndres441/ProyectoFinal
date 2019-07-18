@@ -14,8 +14,7 @@ export class ProductListComponent implements OnInit {
   public producto: Product;
   private showImage = false; */
   @Input() products : Product[];
-  @Output() submitFormNotification = new EventEmitter<any>();
-  
+  @Output() showListForm = new EventEmitter<any>();
   
   constructor() {  }
 
@@ -28,5 +27,7 @@ export class ProductListComponent implements OnInit {
   /* onSubmit(): void {
     this.submitFormNotification.emit(this.products);
   } */
-
+  showList():void{
+    this.showListForm.emit(true);
+  }
 }
