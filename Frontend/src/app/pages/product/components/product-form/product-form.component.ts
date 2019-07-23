@@ -8,8 +8,10 @@ import { FormGroup, FormBuilder, Validators} from '@angular/forms';
   styleUrls: ['./product-form.component.css']
 })
 export class ProductFormComponent implements OnInit {
+
   @Input() product: Product;
   @Output() submitFormNotification =  new EventEmitter < FormGroup > ();
+  @Output() showListForm =  new EventEmitter < any > ();
 
   productForm: FormGroup;
 items;
@@ -18,8 +20,8 @@ items;
   ngOnInit() {
     this.productForm = this.fb.group({
       nombre: ['', Validators.required],
-      imagen: ['', ],
-      descripcion: ['', ],
+      imagen: ['', Validators.required],
+      descripcion: ['', Validators.required],
       tmstmp: ['', ]
     });
   }

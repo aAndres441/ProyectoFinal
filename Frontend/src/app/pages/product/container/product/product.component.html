@@ -1,4 +1,6 @@
 
+
+<app-navigation></app-navigation>
 <app-product-list 
     [products]="products"
     (submit)="onSubmitForm($event)">
@@ -6,3 +8,4 @@
 <app-product-form
     (submit)="onSubmitForm($event)">
 </app-product-form>
+<button nbButton size="xsmall" (click)="back()" class="mr-2">Atrás</button>

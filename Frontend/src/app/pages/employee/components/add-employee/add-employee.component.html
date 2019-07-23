@@ -1,0 +1,67 @@
+<p>add-employee works!</p>
+
+<div [formGroup]="employeedForm">
+    <div class="row">
+      <div class="col-3">
+        <!-- <div class="form-group">
+          <label class="label-title">Producto*
+            <span>
+              <i *ngIf="selectedProduct?.valid" class="fas fa-check success-icon"></i>
+              <i *ngIf="selectedProduct?.invalid" class="fas fa-times error-icon"></i>
+            </span>
+          </label>
+          <ng-select 
+          appendTo="body"          
+          [items]="products"
+          bindLabel="name"
+          [closeOnSelect]="false"
+          formControlName="products">
+        </ng-select>
+      </div>    -->
+    </div>
+    <div class="col-3">
+        <!-- <div class="form-group">
+          <label class="label-title">Relación*
+            <span>
+              <i *ngIf="selectedRelation?.valid" class="fas fa-check success-icon"></i>
+              <i *ngIf="selectedRelation?.invalid" class="fas fa-times error-icon"></i>
+            </span>
+          </label>
+          <ng-select 
+          appendTo="body"          
+          [items]="relations"
+          bindLabel="name"
+          [closeOnSelect]="false"
+          formControlName="relations">
+          </ng-select>
+        </div>     -->
+      </div>
+      <div class="col-2 align-self-center">
+        <button nbButton shape="round" size="small" status="primary" title="Consultar" class="elevation-z4 mr-2" 
+          (click)="consultarBtn($event)">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <nb-card accent="primary">
+    <nb-card-header>Checklist Productos</nb-card-header>
+    <nb-card-body>
+      <!-- <app-product-checklist-form
+        [products] = "products"
+        [relations] = "relations"
+        (show) = "showResult($event)"> 
+      </app-product-checklist-form> 
+      <app-product-checklist-result *ngIf="show else result" #result>
+  -->
+      </app-product-checklist-result>
+    </nb-card-body>
+    <nb-card-footer>
+        <button nbButton outline status="primary" size="xsmall" (click)="cancelar()"  >
+            <i class="fas fa-times d-block"></i>
+            <small class="p-1">Cancelar</small>
+          </button>
+    </nb-card-footer>
+  </nb-card>
+  
+

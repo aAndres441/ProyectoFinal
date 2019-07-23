@@ -41,4 +41,8 @@ export class ProductComponent implements OnInit {
   }
   onSubmitForm(form: any): void {
   }
+
+  back() {
+    this.router.navigateByUrl('home');
+  }
 }

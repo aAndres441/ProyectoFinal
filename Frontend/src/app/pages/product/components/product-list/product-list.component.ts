@@ -10,8 +10,9 @@ import { Product } from '../../model/product.model';
 export class ProductListComponent implements OnInit {
 
   /*   public productos$: Observable<Product[]>;
-    public producto: Product;
-    private showImage = false; */
+    public producto: Product;*/
+    
+    private showImage = false; 
     
   @Input() products: Product [];  // Array<Product>;
   @Output() submitFormNotification = new EventEmitter<any>();
@@ -22,11 +23,18 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
   }
 
-  /*  toggleImage(): void {
-     this.showImage = !this.showImage;
-   } */
   onSubmit(): void {
     this.submitFormNotification.emit(this.products);
   }
 
+  showListForm(): void{
+    this.showImage = !this.showImage;
+  }
+
 }
+
+
+
+  /*  toggleImage(): void {
+     this.showImage = !this.showImage;
+   } */
