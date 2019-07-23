@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-<div>
-  <h2>PRODUCTOS</h2>
-  <li *ngFor="let p of products" >
-    {{p.nombre}}
-  </li>
-  <div class="col-12 mb-2">
-    <button type="submit" (click)="showList()" class="btn btn-primary btn-sm btn-block" >Nuevo</button>
-  </div>
-</div>
-=======
 <table>
   <thead>
     <tr>
@@ -19,14 +8,27 @@
       <th>tmstmp</th>
     </tr>
   </thead>
-  <tbody *ngFor="let p of products" >
+  <tbody>
     <tr>
+      <td>1</td>
+      <td>Soja</td>
+      <td></td>
+      <td>Soja de primera</td>
+      <td>18/07/2019 12:00:00</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Soja</td>
+      <td></td>
+      <td>Soja de primera</td>
+      <td>18/07/2019 12:00:00</td>
+    </tr>
+    <!-- <tr>
       <td>{{p.id}}</td>
       <td>{{p.nombre}}</td>
       <td>{{p.imagen}}</td>
       <td>{{p.descripcion}}</td>
       <td>{{p.tmstmp}}</td>
-    </tr>
+    </tr> -->
   </tbody>
 </table>
->>>>>>> 6662af9c6284c725cab8c2d0224cfde03c6d250d

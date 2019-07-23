@@ -4,27 +4,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule} from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './components/navigation/navigation.component';
-
 import {ProductoService} from './services/producto.service';
-import { ListComponent } from './components/shared/list/list.component';
-import { AltaComponent } from './components/shared/alta/alta.component';
+import { ThemeModule } from './theme/theme.module';
 
 const PAGES_MODULES = [
-  ProductModule
+  ProductModule,
+  ThemeModule
 ];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavigationComponent,
-    ListComponent,
-    AltaComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ...PAGES_MODULES
   ],
   providers: [
     ProductoService
