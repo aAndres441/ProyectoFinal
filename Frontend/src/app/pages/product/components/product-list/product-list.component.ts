@@ -27,7 +27,7 @@ export class ProductListComponent implements OnInit {
   /* onSubmit(): void {
     this.submitFormNotification.emit(this.products);
   } */
-  showList():void{
-    this.showListForm.emit(true);
+  showForm(){
+    return this.showListForm.emit('form');
   }
 }

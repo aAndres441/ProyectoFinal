@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router , ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +8,15 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor( private route:Router) { }
+  constructor( private route:Router,private actRoute : ActivatedRoute) { }
 
   ngOnInit() {
+
   }
   onSubmit(){
-    //this.route.navi
+    //this.route.navigate("productos");
+  }
+  productos():void{
+    this.route.navigate(['productos']);
   }
 }

@@ -25,7 +25,6 @@ export class ProductFormComponent implements OnInit {
   }
   
   onSubmit(): void {
-    this.showListForm.emit(false);
     if (this.productForm.valid) {
       //this.onSubmit.emit();
     }
@@ -49,5 +48,10 @@ export class ProductFormComponent implements OnInit {
   get tmstmp (){
     return this.productForm.get('tmstmp');
   }
-
+  showList(){
+    return this.showListForm.emit('list');
+  }
+  showDetail(){
+    return this.showListForm.emit('detail');
+  }
 }

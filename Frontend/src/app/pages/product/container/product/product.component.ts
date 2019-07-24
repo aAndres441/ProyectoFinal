@@ -13,7 +13,7 @@ export class ProductComponent implements OnInit {
 
   $products:Observable<Product[]>
   products : Product[];
-  showListForm:boolean;
+  showListForm:string = 'list';
   constructor( private productoService: ProductoService, private router: Router ) { }
 
   
@@ -38,8 +38,9 @@ export class ProductComponent implements OnInit {
     // this.router.navigate(['producto/add']);
     //routerLink="/producto/edit/{{p.id}}" 
   }
-  onSubmit(bool:boolean):void {
-    this.showListForm = bool;
+  showPage(page:string):string {
+    this.showListForm = page;
+    return this.showListForm;
   } 
  
 }

@@ -1,12 +1,12 @@
-import { ProductListComponent } from './components/product-list/product-list.component';
-import { ProductFormComponent } from './components/product-form/product-form.component';
+import { ProductListComponent,ProductFormComponent,ProductDetailComponent } from './components/index';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductComponent } from './container';
+import { ProductComponent } from './container/index';
 
 const APP_COMPONENTS_PRODUCTS = [
   ProductFormComponent,
-  ProductListComponent
+  ProductListComponent,
+  ProductDetailComponent
 ]
 const APP_CONTAINERS_PRODUCTS = [
   ProductComponent

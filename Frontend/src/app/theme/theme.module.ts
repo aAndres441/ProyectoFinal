@@ -1,7 +1,4 @@
-import {
-    HomeComponent,
-    SidebarComponent
-  } from './components/index';
+import {HomeComponent,SidebarComponent} from './components/index';
 import { NgModule } from '@angular/core';
 
   const COMPONENTS = [
