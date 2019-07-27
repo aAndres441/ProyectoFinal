@@ -1,11 +1,58 @@
 
+<app-header></app-header>
 
-<app-navigation></app-navigation>
-<app-product-list 
-    [products]="products"
-    (submit)="onSubmitForm($event)">
-</app-product-list>
-<app-product-form
-    (submit)="onSubmitForm($event)">
-</app-product-form>
-<button nbButton size="xsmall" (click)="back()" class="mr-2">Atrás</button>
+<div class="col-md-12">
+
+    <div class=" card ">
+        <!-- <h2> showListForm: </h2> {{showListForm}} -->
+        <app-product-list *ngIf="showListForm == 'list' else list" #list (showListForm)="showPage($event)">
+            [products] = "products"
+        </app-product-list>
+        
+        <app-product-form *ngIf=" showListForm == 'form' else form " #form (showListForm)="showPage($event)">
+        </app-product-form>
+
+        <app-product-detail *ngIf=" showListForm == 'detail' else detail " #detail (showListForm)="showPage($event)">
+        </app-product-detail>
+    </div>
+
+    <div id="sepa">
+        <hr>
+    </div>
+
+    <button class="mr-4" nbButton size="xsmall" (click)="back()"><i class="fas fa-arrow-left mr-2 " style="color: rgb(173, 226, 28)"></i>Go back</button>
+
+    <div *ngIf='errorMessage' class='alert alert-danger'>
+        Error: {{ errorMessage }}
+    </div>
+</div>
+
+
+
+    <!-- <app-product-form *ngIf="showPage == form" #form (submit)="onSubmitForm($event)">
+    </app-product-form> -->
+
+    <!--   <section>
+        <div class="sdiv">
+            <div class="mockup">
+                <h2> section </h2> {{showListForm}}
+                -->
+    <!--  <app-mockup></app-mockup> -->
+    <!-- 
+            </div>
+            <div class="sectionp row">
+                <div class="col-md-6">
+                    <h2> tocar </h2>
+                </div>
+                <div class="col-md-6">
+                    <div class="newdate" *ngIf="!block">
+                        <button (click)="ndate()">+</button>
+                    </div>
+                    <div class="newdate" *ngIf="block">
+                        <button (click)="ndate()">/</button>
+                    </div>
+                </div>
+                <ng-template #dynamic></ng-template>
+            </div>
+        </div>
+    </section> -->

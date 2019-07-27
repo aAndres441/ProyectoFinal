@@ -4,15 +4,23 @@
     margin  : 0;
     position: relative;
 }
-h3{
-    font-family : "sans-serif";
+h4, h3{
+    color: mediumseagreen;
 }
+
+.card{
+    
+    border-top-color: greenyellow;
+    top: 10px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+
+}
+
 textarea{
     display : block;
-
     padding : 10px;
-    margin  : 0px;
-  
+    margin  : 0px;  
 }
 .class{
     padding : 20px;
@@ -23,3 +31,6 @@ textarea{
     margin  : 5px;
     border-radius: 10px
 }
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }

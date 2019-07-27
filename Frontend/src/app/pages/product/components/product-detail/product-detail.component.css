@@ -1,7 +1,3 @@
-#sepa{
-    background-color: greenyellow;
-    size: 10px;
-}
 .card{
     
     border-top-color: greenyellow;
@@ -10,7 +6,9 @@
     margin-top: 15px;
 
 }
-
 h4, h3{
-    color:mediumseagreen;
+    color: mediumseagreen;
+}
+.card-header{
+    background-color: rgb(189, 235, 219);
 }

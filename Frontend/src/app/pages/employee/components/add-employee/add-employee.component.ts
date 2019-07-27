@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { EmployeeService } from 'src/app/services/employee.service';
+import { Employee } from '../../model/employee.model';
 
 @Component({
   selector: 'app-add-employee',
@@ -11,14 +12,25 @@ export class AddEmployeeComponent implements OnInit {
 
   @Input() products: string[];
   @Input() relations: string[];
-  // tslint:disable-next-line: no-output-native
-  @Output() show = new EventEmitter<any>();
+  @Output() showList = new EventEmitter<any>();
   employeedForm: FormGroup;
+  empleadoPrueba: Employee[];
 
   constructor(private fb: FormBuilder, private service: EmployeeService) { }
 
   ngOnInit() {
+    this.employeedForm = this.fb.group({
+      nombre: ['', Validators.required],
+     /*  imagen: ['', Validators.required],
+      descripcion: ['', Validators.required], */
+      tmstmp: ['', ]
+    });
   }
+  addEmployee( a: HTMLInputElement, s: HTMLInputElement) {  // para decirle que es un imput desde html
+    console.log('enviando...' + a.value + '--' + s.value);
+    this.empleadoPrueba.push(null);
+  }
+
   submit() {
     if (this.employeedForm.valid) {
     } else {
@@ -33,7 +45,7 @@ export class AddEmployeeComponent implements OnInit {
    }  */
 
   consultarBtn() {
-    this.show.emit();
+    this.showList.emit();
   }
 
 }

@@ -1,3 +1,11 @@
 #hh{
     background-color: yellow
 }
+.card{
+    
+    border-top-color: brown;
+    top: 10px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+
+}
