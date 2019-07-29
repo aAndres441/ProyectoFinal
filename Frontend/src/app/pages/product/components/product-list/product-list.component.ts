@@ -20,11 +20,20 @@ export class ProductListComponent implements OnInit {
 
   @Output() showListForm = new EventEmitter <any>();
 
-  constructor() { }
+  productPrueba = [];
+
+  constructor() {  
+     this.productPrueba = [ {id:'1', nombre:'Soja', imagen:'s', descripcion: 'soja de primera', fecha:'3333'},
+     {id:'2', nombre:'Maiz', imagen:'m', descripcion: 'maiz de primera', fecha:'11'},
+     {id:'3', nombre:'Palta', imagen:'p', descripcion: 'aplta de primera', fecha:'88'},
+     {id:'55', nombre:'hh', imagen:'hhhj', descripcion: 'soja de primera', fecha:'55'}];
+}
 
   ngOnInit() {
+    
   }
-
+  public getproductPrueba(){
+  }
   /* onSubmit(): void {
     this.submitFormNotification.emit(this.Product);
   } */

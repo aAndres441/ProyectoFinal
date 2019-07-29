@@ -4,14 +4,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ProductFormComponent } from './pages/product/components/product-form/product-form.component';
-import { ProductDetailComponent } from './pages/product/components/product-detail/product-detail.component';
 import { ProductListComponent } from './pages/product/components/product-list/product-list.component';
-
 import { ProductComponent } from './pages/product/container/index';
 import { ProductModule } from './pages/product/product.module';
+
 import { HomeComponent } from './pages/home/home.component';
-import { AddEmployeeComponent } from './pages/employee/components';
+
 import { EmployeeComponent } from './pages/employee/containers/employee/employee.component';
+
+import { ShippingComponent } from './pages/shipping/container/shipping/shipping.component';
 /*import { 
   ProductFormComponent,
   ProductDetailComponent,
@@ -52,7 +53,12 @@ const routes: Routes = [
   {
     path: 'employee',
     component: EmployeeComponent
+  },
+  {
+    path: 'shipping',
+    component: ShippingComponent
   }
+  
 
 ];
 

@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {SharedModule} from '../../shared/shared.module';
 import {
-  ShippingAddComponent,
+  ShippingFormComponent,
   ShippingListComponent
 } from './components';
 
@@ -10,7 +11,7 @@ import {
 } from './container';
 
 const APP_COMPONENTS_SHIPPING = [
-  ShippingAddComponent,
+  ShippingFormComponent,
   ShippingListComponent
 ];
 const APP_CONTAINERS_SHIPPING = [
@@ -24,7 +25,8 @@ const APP_CONTAINERS_SHIPPING = [
   ],
 
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ]
 })
 export class ShippingModule { }

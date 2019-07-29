@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, HostBinding } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms'; // FormBuilder crear formularios.
+import {ProductoService} from '../../../../services/producto.service';
 import { Product } from '../../model/product.model';
-import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-product-form',
@@ -20,7 +21,7 @@ export class ProductFormComponent implements OnInit {
   
   losProducts: Product[] = [];
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, service: ProductoService) { }
 
   ngOnInit() {
     this.productForm = this.fb.group({
@@ -30,7 +31,7 @@ export class ProductFormComponent implements OnInit {
       tmstmp: ['', ]
     });
   }
-  
+
   showList() {
     return this.showListForm.emit('list');
   }
@@ -50,6 +51,15 @@ export class ProductFormComponent implements OnInit {
     return false;
     // cancela el reseteado de la pagina
   }
+
+  addProduct( a: HTMLInputElement, s: HTMLInputElement) {  // para decirle que es un imput desde html
+    console.log('enviando...' + a.value + '--' + s.value);
+    this.losProducts.push(null);
+  }
+  cancel(){
+    console.log('cancelo');
+  }
+
   onSubmit(): void {
     const form: Product = Object.assign({}, this.product);
     console.warn('Your order has been submitted');
@@ -60,7 +70,23 @@ export class ProductFormComponent implements OnInit {
     }
     // this.productForm.reset();
   }
+  
+  submit() {
+    if (this.productForm.valid) {
+      console.log(this.productForm.value);
+    } else {
+      this.showErrorAlert('Debe completar todos los campos.')
+    }
+  }
+  /* 
+  submit() {
+    console.log(this.productForm.value);
+  } */
 
+
+  showErrorAlert(arg0: string) {
+    throw new Error(' Method not implemented.');
+  }
   guardar() {
     /*  console.log(this.edit + ' se guardara el ' + this.producto.nombre);
  

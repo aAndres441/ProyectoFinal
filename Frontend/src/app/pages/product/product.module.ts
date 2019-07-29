@@ -2,6 +2,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {SharedModule} from '../../shared/shared.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';  // Para utilizar la API de formularios reactivos 
 
 import {
   ProductComponent
@@ -29,7 +31,10 @@ const APP_CONTAINERS_PRODUCTS = [
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    BrowserModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class ProductModule { }
