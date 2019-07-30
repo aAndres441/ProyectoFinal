@@ -22,3 +22,7 @@
   .card-body{
       background-color: rgb(206, 241, 199);
   }
+  a:hover{
+      color: coral;
+      text-decoration: none;
+    }

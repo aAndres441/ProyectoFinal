@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import {RouterModule, Routes} from '@angular/router';
+
 import { AppComponent } from './app.component';
 import { ProductModule } from './pages/product/product.module';
 import { ProductoService} from './services/producto.service';
@@ -23,6 +25,7 @@ import { BuyModule} from './pages/buy/buy.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     HttpClientModule,
     FormsModule,
     ProductModule,

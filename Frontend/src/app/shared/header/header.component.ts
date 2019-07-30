@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,9 +10,11 @@ export class HeaderComponent implements OnInit {
 
   @Input() title = 'Barraca Cardona';
   
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
-
+  back(): void {
+    this.router.navigate(['/']);
+  }
 }

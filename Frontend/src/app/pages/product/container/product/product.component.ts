@@ -19,6 +19,7 @@ export class ProductComponent implements OnInit {
   errorMessage = 'ta le erro!!';
   block = false;
   componentes: any;
+  
   @Input() items: {
     header: string,
     content: string
@@ -71,7 +72,10 @@ export class ProductComponent implements OnInit {
     this.showListForm  =  page ;
     return  this.showListForm ;
   }
-  back() {
+/*   back() {
     this.router.navigateByUrl('home');
+  } */
+  back(): void {
+    this.router.navigate(['/']);
   }
 }

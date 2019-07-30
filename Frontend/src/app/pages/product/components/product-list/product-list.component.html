@@ -11,6 +11,7 @@
         <th> Imagen</th>
         <th> Hora</th>
         <th> Operación</th>
+        <th>5 Star Rating</th>
       </tr>
     </thead>
     <tbody>
@@ -20,8 +21,10 @@
         <td>{{p.descripcion}}
         </td>
         <td>
-          <!-- <img [src]="p.imagen ==''? '/assets/noimagen.png'"> -->
-          <img src="../../../../../assets/no_image-128.png">
+          <!-- <img [src]="p.imagen ==''? '/assets/no_image-128.png"> -->
+          <img src="../../../../../assets/no_image-128.png"
+          [style.width.px]='imageWidth'
+          [style.margin.px]='imageMargin'>
         </td>
         <td>
           {{p.fecha}}
@@ -29,8 +32,13 @@
         <td>
           <button (click)=" showDetail() " class="mr-2 mt-4"> <i class="fas fa-info-circle mr-2"
               style="color: rgb(173, 226, 28)"></i> </button> 
-              <button (click)="showForm()" id="btnForma"> <i class="fas fa-plus mr-3 " style="color: rgb(173, 226, 28)"></i></button>
+          <button (click)="showForm()" id="btnForma"> <i class="fas fa-plus mr-3 " style="color: rgb(173, 226, 28)"></i></button>
               
+            </td>
+            <td>
+           <!--    <pm-star [rating]='product.starRating'
+                       (ratingClicked)='onRatingClicked($event)'>
+              </pm-star> -->
             </td>
       </tr>
     </tbody>

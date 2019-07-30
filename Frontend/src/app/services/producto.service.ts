@@ -35,15 +35,16 @@ export class ProductoService {
       );
   }
 
-/* 
+ 
   getOneProducto( id: string | number) {  // id: string | number
-    return this.http.get<Producto>(environment.API_BASE + 'producto/' + id).subscribe(
+   /*  return this.http.get<Product>(environment.API_BASE + 'producto/' + id).subscribe(
       producto => {
-        this.producto = producto;
-      }
-    );
+        this.product = producto;
+        error => this.errorMessage = < any > error);
+      } 
+    );*/
   }
-
+/*
   saveProducto(prod: Producto) {
     return this.http.post<Producto>(environment.API_BASE + 'producto/', prod).subscribe((p: Producto) => {
       this.productos.push(p);

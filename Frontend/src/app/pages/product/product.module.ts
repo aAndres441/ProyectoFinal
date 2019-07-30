@@ -5,6 +5,9 @@ import {SharedModule} from '../../shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';  // Para utilizar la API de formularios reactivos 
 
+import {AppRoutingModule} from '../../app-routing.module';
+import {RouterModule, Routes} from '@angular/router';
+
 import {
   ProductComponent
 } from './container';
@@ -34,7 +37,9 @@ const APP_CONTAINERS_PRODUCTS = [
     SharedModule,
     BrowserModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterModule
+    
   ]
 })
 export class ProductModule { }

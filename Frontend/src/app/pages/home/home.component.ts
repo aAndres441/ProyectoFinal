@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
   
-  onBack(): void {
+  /* onBack(): void {
     this.router.navigate(['/productos']);
-  }
+  } */
 }

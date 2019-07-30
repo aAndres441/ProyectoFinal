@@ -23,13 +23,13 @@ img{
     border-radius: 2px;
    /*  clear: both; */
     
-}/* 
+} 
 a:visited{
     color: #a72c2c;
 }
 a:hover{
     color: greenyellow;
 }
-a:after{
+/*a:after{
     color: blueviolet;
 } */

@@ -20,6 +20,8 @@ export class ProductListComponent implements OnInit {
 
   @Output() showListForm = new EventEmitter <any>();
 
+  pageTitle = 'Product list';
+
   productPrueba = [];
 
   constructor() {  

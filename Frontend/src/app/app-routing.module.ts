@@ -13,6 +13,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { EmployeeComponent } from './pages/employee/containers/employee/employee.component';
 
 import { ShippingComponent } from './pages/shipping/container/shipping/shipping.component';
+import { SaleComponent } from './pages/sale/container';
+import { BuyComponent } from './pages/buy/container';
 /*import { 
   ProductFormComponent,
   ProductDetailComponent,
@@ -43,7 +45,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'producto/add',
+    path: 'products',
     component: ProductListComponent
   },
   {
@@ -57,6 +59,14 @@ const routes: Routes = [
   {
     path: 'shipping',
     component: ShippingComponent
+  },
+  {
+    path: 'sale',
+    component: SaleComponent
+  },
+  {
+    path: 'buy',
+    component: BuyComponent
   }
   
 
