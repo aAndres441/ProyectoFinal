@@ -2,7 +2,6 @@ import { ProductoService } from 'src/app/services/producto.service';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../model/product.model';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product',
@@ -10,10 +9,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-
-  $products:Observable<Product[]>
   products : Product[];
-  showListForm:string = 'list';
+  detailProduct : Product = new Product();
+  showComponent:string = 'list';
   constructor( private productoService: ProductoService, private router: Router ) { }
 
   
@@ -22,12 +20,11 @@ export class ProductComponent implements OnInit {
   }
 
   getProductos():void{
-    /* this.productoService.getProductos().subscribe(
-      (json) => {
-        this.products = json
-        console.log(this.products)
+    this.productoService.getProductos().subscribe(
+      (data) => {
+        this.products = data
       }
-    ); */
+    );
   }
   
   eliminar(id: string) {
@@ -38,9 +35,14 @@ export class ProductComponent implements OnInit {
     // this.router.navigate(['producto/add']);
     //routerLink="/producto/edit/{{p.id}}" 
   }
-  showPage(page:string):string {
-    this.showListForm = page;
-    return this.showListForm;
+  showPage(obj:any):string {
+    console.log(obj);
+    this.showComponent = obj.page;
+    if(this.showComponent == "detail"){
+      this.detailProduct = obj.product;
+    }
+    
+    return this.showComponent;
   } 
  
 }

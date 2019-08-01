@@ -9,25 +9,23 @@ import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 })
 export class ProductFormComponent implements OnInit {
   @Input() product : Product;
-  @Output() showListForm = new EventEmitter<any>();
-  productForm:FormGroup;
+  @Output() showComponent = new EventEmitter<any>();
+
+  public productForm:FormGroup;
 
   constructor(private fb : FormBuilder) { }
 
   ngOnInit() {
-    
     this.productForm = this.fb.group({
       nombre : ['',Validators.required],
       imagen : ['', Validators.required],
-      descripcion : ['', Validators.required],
-      tmstmp : ['', Validators.required]
+      descripcion : ['', Validators.required]
     });
   }
-  
-  onSubmit(): void {
-    if (this.productForm.valid) {
-      //this.onSubmit.emit();
-    }
+  onSubmit(){
+    console.log("form value: ");
+    console.log(this.productForm);
+    //this.showComponent.emit({"page":"list","form" : this.productForm.value});
   }
 
   guardar() {
@@ -44,14 +42,9 @@ export class ProductFormComponent implements OnInit {
   }
   get descripcion (){
     return this.productForm.get('descripcion');
-  }
-  get tmstmp (){
-    return this.productForm.get('tmstmp');
-  }
+  } 
+
   showList(){
-    return this.showListForm.emit('list');
-  }
-  showDetail(){
-    return this.showListForm.emit('detail');
+    //return this.showComponent.emit({"page":"list"});
   }
 }

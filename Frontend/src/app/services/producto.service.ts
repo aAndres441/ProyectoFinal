@@ -28,12 +28,17 @@ export class ProductoService {
 
 
   getProductos(): Observable<Product[]> {
-    return this.http.get<Product[]>(environment.API_BASE + 'producto').pipe(
+    return this.http.get<Array<Product>>(environment.API_BASE + 'productos').pipe(
       map(
-          json => json as any,
-          json => this.products.push(this.productSerializer.fromJson(json))
+          (data:Array<Product>) => this.productTransform(data)
       )
     )
+  }
+
+  productTransform(data:Array<Product>):Array<Product>{
+    console.log('Array Prods');
+    console.log(data);
+    return data;
   }
 
 /* 

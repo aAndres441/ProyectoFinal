@@ -12,45 +12,46 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
-class ProductoController {
+class EmployeeController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            res.json(yield database_1.default.query('SELECT * FROM producto'));
+            const emp = yield database_1.default.query('SELECT * FROM empleado');
+            res.json({ emp });
         });
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('INSERT INTO producto set ?', [req.body]);
-            res.json({ message: 'Producto creado y guardado!' });
+            yield database_1.default.query('INSERT INTO empleado set ?', [req.body]);
+            res.json({ message: 'Empleado creado y guardado!' });
         });
     }
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('delete producto where id = ?', [id]);
-            res.json({ text: 'borrando producto :' + req.params.id });
+            yield database_1.default.query('delete empleado where id = ?', [id]);
+            res.json({ text: 'borrar Empleado :' + req.params.id });
         });
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('UPDATE producto set ? where id = ?', [req.body, id]);
-            res.json({ text: 'editando prod' + req.params.id });
+            yield database_1.default.query('UPDATE empleado set ? where id = ?', [req.body, id]);
+            res.json({ text: 'editando empleado ' + req.params.id });
         });
     }
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const prod = yield database_1.default.query('SELECT * FROM producto WHERE id = ?', [id]);
+            const prod = yield database_1.default.query('SELECT * FROM empleado WHERE id = ?', [id]);
             if (prod.length > 0) {
                 return res.json(prod[0]);
             }
-            res.status(404).json({ message: 'La persona no se ah encontrado!' });
+            res.status(404).json({ message: 'El empleado no se ah encontrado!' });
         });
     }
 }
-const productoController = new ProductoController();
-exports.default = productoController;
+const employeeController = new EmployeeController();
+exports.default = employeeController;
 /*
 exports.removeById = (userId) => {
     return new Promise((resolve, reject) => {

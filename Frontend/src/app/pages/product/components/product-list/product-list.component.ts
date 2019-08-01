@@ -1,7 +1,5 @@
-import { ProductoService } from './../../../../services/producto.service';
+import { Product } from './../../model/product.model';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
-import { Product } from '../../model/product.model';
 
 @Component({
   selector: 'app-product-list',
@@ -10,24 +8,21 @@ import { Product } from '../../model/product.model';
 })
 export class ProductListComponent implements OnInit {
 
-/*   public productos$: Observable<Product[]>;
-  public producto: Product;
-  private showImage = false; */
-  @Input() products : Product[];
-  @Output() showListForm = new EventEmitter<any>();
-  
+  @Input() products : Array<Product>;
+  @Output() showComponent = new EventEmitter<any>();
+
   constructor() {  }
 
   ngOnInit() {
+   
   }
 
- /*  toggleImage(): void {
-    this.showImage = !this.showImage;
-  } */
-  /* onSubmit(): void {
-    this.submitFormNotification.emit(this.products);
-  } */
-  showForm(){
-    return this.showListForm.emit('form');
+  showDetail(p:Product){
+    return this.showComponent.emit({"page":"detail","product":p});
+  }
+
+  showForm(p:Product){
+    if(!p) p = new Product();
+    return this.showComponent.emit({"page":"form","product":p});
   }
 }

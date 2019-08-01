@@ -1,40 +1,41 @@
 import {Request,Response} from 'express';
 import pool from '../database';
 
-class ProductoController {
+class EmployeeController {
     
     public async list (req:Request,res:Response){
-        res.json(await pool.query('SELECT * FROM producto'));
+        const emp = await pool.query('SELECT * FROM empleado');
+        res.json({emp});
     }
     
     public async create (req:Request,res:Response): Promise<any>{
-        await pool.query('INSERT INTO producto set ?',[req.body]);
-        res.json({message:'Producto creado y guardado!'})
+        await pool.query('INSERT INTO empleado set ?',[req.body]);
+        res.json({message:'Empleado creado y guardado!'})
     }
 
     public async delete (req:Request,res:Response):Promise<any>{
         const {id} = req.params;
-        await pool.query('delete producto where id = ?', [id]); 
-        res.json({text:'borrando producto :'+ req.params.id});
+        await pool.query('delete empleado where id = ?', [id]); 
+        res.json({text:'borrar Empleado :'+ req.params.id});
     }
 
     public async update (req:Request,res:Response){
         const {id} = req.params;
-        await pool.query('UPDATE producto set ? where id = ?',[req.body , id]);
-        res.json({text:'editando prod' + req.params.id})
+        await pool.query('UPDATE empleado set ? where id = ?',[req.body , id]);
+        res.json({text:'editando empleado ' + req.params.id})
     }
 
     public async getOne (req:Request,res:Response):Promise<any>{
         const {id} = req.params;
-        const prod = await pool.query('SELECT * FROM producto WHERE id = ?', [id]);
+        const prod = await pool.query('SELECT * FROM empleado WHERE id = ?', [id]);
         if(prod.length>0) {
             return res.json(prod[0]);
         }
-        res.status(404).json({message:'La persona no se ah encontrado!'})
+        res.status(404).json({message:'El empleado no se ah encontrado!'})
     }
 }
-const productoController = new ProductoController();
-export default productoController;
+const employeeController = new EmployeeController();
+export default employeeController;
 
 /*
 exports.removeById = (userId) => {

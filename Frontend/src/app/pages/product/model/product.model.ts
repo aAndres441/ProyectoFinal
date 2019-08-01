@@ -1,7 +1,8 @@
-export interface Product {
-    id : number,
-    nombre : string,
-    imagen? : string,
-    descripcion? : string,
+export class Product {
+    id : number;
+    nombre : string;
+    imagen? : string;
+    descripcion? : string;
     tmstmp? : Date
+    constructor(){}
 }

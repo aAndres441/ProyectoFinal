@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Product } from '../../model/product.model';
 
 @Component({
   selector: 'app-product-detail',
@@ -6,12 +7,15 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-  @Output() showListForm = new EventEmitter<any>();
+  @Output() showComponent = new EventEmitter<any>();
+  @Input() detailProduct : Product = new Product();
+
   constructor() { }
 
   ngOnInit() {
   }
-  showForm(){
-    return this.showListForm.emit("form");
+
+  showPage(){
+    return this.showComponent.emit("list");
   }
 }
