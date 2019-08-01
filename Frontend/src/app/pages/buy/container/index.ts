@@ -1,0 +1,1 @@
+export * from './buy/buy.component';
