@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Employee} from '../../model/employee.model';
 
 @Component({
   selector: 'app-employee-list',
@@ -6,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
-
-  constructor() { }
+ 
+  empleados: Employee[] = [];
+  employee: Employee;
+  constructor() {
+    
+   }
 
   ngOnInit() {
   }

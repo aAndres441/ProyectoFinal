@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EmployeeListComponent,
+import {SharedModule} from '../../shared/shared.module';
+
+import {
+  EmployeeListComponent,
    DocumentsComponent,
    AddEmployeeComponent,
-   AddressComponent
+   AddressComponent,
   } from './components';
+
 import { EmployeeComponent } from './containers';
 
 const APP_COMPONENTS_EMPLOYEE = [
@@ -18,12 +22,15 @@ const APP_CONTAINERS_EMPLOYEE = [
 ];
 
 @NgModule({
+   
   declarations: [
     ...APP_COMPONENTS_EMPLOYEE,
     ...APP_CONTAINERS_EMPLOYEE
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    SharedModule
+  ],
+ 
   })
   export class EmployeeModule { }

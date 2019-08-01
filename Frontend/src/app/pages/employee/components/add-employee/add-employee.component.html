@@ -1,67 +1,31 @@
-<p>add-employee works!</p>
 
-<div [formGroup]="employeedForm">
-    <div class="row">
-      <div class="col-3">
-        <!-- <div class="form-group">
-          <label class="label-title">Producto*
-            <span>
-              <i *ngIf="selectedProduct?.valid" class="fas fa-check success-icon"></i>
-              <i *ngIf="selectedProduct?.invalid" class="fas fa-times error-icon"></i>
-            </span>
-          </label>
-          <ng-select 
-          appendTo="body"          
-          [items]="products"
-          bindLabel="name"
-          [closeOnSelect]="false"
-          formControlName="products">
-        </ng-select>
-      </div>    -->
-    </div>
-    <div class="col-3">
-        <!-- <div class="form-group">
-          <label class="label-title">Relación*
-            <span>
-              <i *ngIf="selectedRelation?.valid" class="fas fa-check success-icon"></i>
-              <i *ngIf="selectedRelation?.invalid" class="fas fa-times error-icon"></i>
-            </span>
-          </label>
-          <ng-select 
-          appendTo="body"          
-          [items]="relations"
-          bindLabel="name"
-          [closeOnSelect]="false"
-          formControlName="relations">
-          </ng-select>
-        </div>     -->
-      </div>
-      <div class="col-2 align-self-center">
-        <button nbButton shape="round" size="small" status="primary" title="Consultar" class="elevation-z4 mr-2" 
-          (click)="consultarBtn($event)">
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-  <nb-card accent="primary">
-    <nb-card-header>Checklist Productos</nb-card-header>
-    <nb-card-body>
-      <!-- <app-product-checklist-form
-        [products] = "products"
-        [relations] = "relations"
-        (show) = "showResult($event)"> 
-      </app-product-checklist-form> 
-      <app-product-checklist-result *ngIf="show else result" #result>
-  -->
-      </app-product-checklist-result>
-    </nb-card-body>
-    <nb-card-footer>
-        <button nbButton outline status="primary" size="xsmall" (click)="cancelar()"  >
-            <i class="fas fa-times d-block"></i>
-            <small class="p-1">Cancelar</small>
-          </button>
-    </nb-card-footer>
-  </nb-card>
-  
 
+<div class="card">
+  <h3 class="card-header col-md-12 text-center">{{title}}</h3>
+
+  <form class="card-body" (submit)="addEmployee(nombre)">
+
+    <div class="form-group">
+      <input type="text" #nombre name="nombre" class="form-control form-control-sm" placeholder="* Name" autofocus required
+        minlength="4">
+    </div>
+
+    <div class="form-group">
+      <input type="text" #lastname class="form-control form-control-sm" placeholder="* Last Name" required>
+    </div>
+
+    <app-address> </app-address>
+    <app-documents></app-documents>
+
+    <div class="class-row mx-0">  
+          <button id="btncncel" class="col-auto  mr-2 mt-4" (click)="cancel()"> <i class="far fa-times-circle mr-2"
+            style="color:rgb(10, 100, 33)"></i>Cancelar</button>
+       
+          <button id="btnAdd" class="col-auto  mr-2 mt-4" (click)="addEmployee()"><i class="far fa-check-circle mr-2" 
+            style="color: rgb(10, 100, 33)"></i>Agregar</button>
+       
+      </div>
+
+
+  </form>
+</div>
