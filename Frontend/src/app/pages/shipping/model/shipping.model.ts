@@ -1,7 +1,6 @@
-export interface ShippingModel {
+export interface Shipping {
     id: number;
     nombre: string;
-    imagen?: string;
     descripcion?: string;
     tmstmp?: Date;
 }
