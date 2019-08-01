@@ -1,0 +1,34 @@
+<div class="container p-4">
+    <!-- fila -->
+    <div class="col-md-12">
+        <!-- *ngfor='let p of losProductos' -->
+        <div class="class card-center">
+            <h3 class="card-header col-md-12 text-center">Detail product</h3>
+
+            <div class="card-header" class=" text-white d-flex justify-contetn aligne-items-center">
+                <!-- {{p.nombre}} --> NOMBRE
+
+                <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+            </div>
+            <div class="card-body">
+                <img src="{{p.imagen}}" alt="imagen" class="card-img-top">
+                <p>{{p.fecha}}</p>
+                <p>hola</p>
+            </div>
+            <div class="card-footer">
+                <!-- <a routerLink="/productos/agregar" class="btn btn-info btn-block">EDITAR </a> -->
+                <div class="class-row">
+
+                    <button (click)=" showList() " class="col-3 mr-5 mt-4"> <i class="fas fa-list-ul mr-2"
+                            style="color:rgb(173, 226, 28) "></i>ver lista </button>
+                    <button (click)=" showForm() " class="col-8  mt-4 "> <i class="far fa-edit mr-2"
+                            style="color: rgb(173, 226, 28)"></i> EDIT </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+</div>

@@ -1,11 +1,66 @@
+<div class="container-fluid">
+    <app-header></app-header>
 
+    <!-- <h2> showListForm: </h2> {{showListForm}} -->
+    <app-product-list *ngIf="showListForm == 'list' else list" #list (showListForm)="showPage($event)">
+        [products] = "products"
+    </app-product-list>
 
-<app-navigation></app-navigation>
-<app-product-list 
-    [products]="products"
-    (submit)="onSubmitForm($event)">
-</app-product-list>
-<app-product-form
-    (submit)="onSubmitForm($event)">
-</app-product-form>
-<button nbButton size="xsmall" (click)="back()" class="mr-2">Atrás</button>
+    <app-product-form *ngIf=" showListForm == 'form' else form " #form (showListForm)="showPage($event)">
+    </app-product-form>
+
+    <app-product-detail *ngIf=" showListForm == 'detail' else detail " #detail (showListForm)="showPage($event)">
+    </app-product-detail>
+
+    <div id="sepa">
+        <hr>
+    </div>
+
+    <!--  <div id="atras" *ngIf="showListForm !== 'list' " > -->
+    <a class="nav-link" (click)="back()" routerLinkActive="active-link">
+        <i class="far fa-arrow-alt-circle-left mr-3" style="color: rgb(226, 28, 183);font-size: 34px"></i>
+    </a>
+    <!-- </div> -->
+
+</div>
+
+  
+    <!-- <button class="mr-4" nbButton size="xsmall" (click)="back()"><i class="fas fa-arrow-left mr-2 " style="color: rgb(173, 226, 28)"></i>Go back</button> -->
+   
+        <!-- <a class="nav-link" routerLink="/productos" routerLinkActive="active"> <i class="fas fa-list"></i>List </a>
+        <a class="nav-link" [routerLink] = "['/productos']" routerLinkActive=" active">Home</a> -->
+    <!-- <div *ngIf='errorMessage' class='alert alert-danger'>
+        Error: {{ errorMessage }}
+    </div> -->
+   <!--  <a class="nav-link" (click)="back()" routerLinkActive="active-link">
+        <i class="fa fa-sign-out" aria-hidden="true"></i>
+        <span>Salir</span>
+      </a> -->
+
+    <!-- <app-product-form *ngIf="showPage == form" #form (submit)="onSubmitForm($event)">
+    </app-product-form> -->
+
+    <!--   <section>
+        <div class="sdiv">
+            <div class="mockup">
+                <h2> section </h2> {{showListForm}}
+                -->
+    <!--  <app-mockup></app-mockup> -->
+    <!-- 
+            </div>
+            <div class="sectionp row">
+                <div class="col-md-6">
+                    <h2> tocar </h2>
+                </div>
+                <div class="col-md-6">
+                    <div class="newdate" *ngIf="!block">
+                        <button (click)="ndate()">+</button>
+                    </div>
+                    <div class="newdate" *ngIf="block">
+                        <button (click)="ndate()">/</button>
+                    </div>
+                </div>
+                <ng-template #dynamic></ng-template>
+            </div>
+        </div>
+    </section> -->
