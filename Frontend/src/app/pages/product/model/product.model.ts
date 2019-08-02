@@ -1,8 +1,9 @@
-export interface Product {
+export class Product {
     id: number;
     nombre: string;
-    // document: string;
     imagen?: string;
     descripcion?: string;
     tmstmp?: Date;
+
+    constructor() {}
 }

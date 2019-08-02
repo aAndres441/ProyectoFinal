@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 import { Product } from '../../model/product.model';
 import {ProductoService} from '../../../../services/producto.service';
+import {NgModel} from '@angular/forms';
 
 @Component({
   selector: 'app-product-list',
@@ -11,16 +12,9 @@ export class ProductListComponent implements OnInit {
 
   // @HostBinding('class') classes = 'row';  // todo el componente tendra una fila
 
-  /*   public productos$: Observable<Product[]>;
-    public producto: Product;*/
+  @Input() products: Array<Product>;
 
-  private showImage = false;
-  
-  @Input() products: Product[];// Array<Product>;
-
-  @Output() submitFormNotification = new EventEmitter<any>();
-
-  @Output() showListForm = new EventEmitter <any>();
+  @Output() showComponent  = new EventEmitter <any>();
 
   pageTitle = 'Productos';
 
@@ -33,11 +27,27 @@ export class ProductListComponent implements OnInit {
      {id:'55', nombre:'hh', imagen:'hhhj', descripcion: 'soja de primera', fecha:'55'}];
 }
 
-  ngOnInit() {
-    
+  ngOnInit() {}
+
+  showDetail(p: Product) {
+    console.log(p.nombre);
+    return this.showComponent.emit({' page' : 'detail' , 'product ' : p});
   }
-  public getproductPrueba(){
+
+  showForm(p: Product ) {
+    console.log(/* p.nombre  + */ 'Al form');
+    if (!p) { p = new Product(); }
+    return this.showComponent.emit({' page' : 'form' , 'product ' : p });
   }
+  editar( p: Product ) {
+    return  this . showComponent . emit ({ ' page ' : ' form' , ' product ' : p });
+  }
+
+
+}
+/*   @Output() submitFormNotification = new EventEmitter<any>();
+ */
+
   /* onSubmit(): void {
     this.submitFormNotification.emit(this.Product);
   } */
@@ -45,17 +55,6 @@ export class ProductListComponent implements OnInit {
   /* showForm2(): void {
     this.showImage = !this.showImage;
   } */
-
-  showForm() {
-    return this.showListForm.emit('form');
-  }
-  
-  showDetail() {
-    return this.showListForm.emit('detail');
-  }
-  
-}
-
 
 
   /*  toggleImage(): void {

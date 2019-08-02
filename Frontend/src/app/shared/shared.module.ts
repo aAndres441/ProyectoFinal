@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms' ;
+import { RouterModule } from '@angular/router' ;
 
 import {
   HeaderComponent,
@@ -7,8 +9,10 @@ import {
   SidebarComponent,
   FooterComponent,
   InicioComponent,
-  HomeComponent
+  HomeComponent,
+  LayoutComponent
  } from './index';
+ 
 
 const APP_SHARED_COMPONENTS = [
   HeaderComponent,
@@ -16,11 +20,15 @@ const APP_SHARED_COMPONENTS = [
   SidebarComponent,
   FooterComponent,
   HomeComponent,
-  InicioComponent
+  InicioComponent,
+  LayoutComponent
 ];
 
 const BASE_MODULES = [
-  CommonModule
+  CommonModule,
+  ReactiveFormsModule,
+  RouterModule,
+  FormsModule
 ]
 
 @NgModule({

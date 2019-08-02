@@ -12,29 +12,25 @@ import { Product } from '../pages/product/model/product.model'
 
 export class ProductoService {
 
-  private producto: ProductSerializer;
+    private producto: ProductSerializer;
    private products: Product [] = [];
 
   constructor(private http: HttpClient) {
-    /* this.getProductos().subscribe(
-      prods => {
-        this.productos = prods;
-        localStorage.setItem('producto', JSON.stringify(prods));
-        this.notificarCambios();
-      }, error => {
-        this.productos = JSON.parse(localStorage.getItem('producto'));
-        this.notificarCambios();
-      }); */
+  }
+
+   getProductos(): Observable<Product[]> {
+    return this.http.get<Array<Product>>(environment.API_BASE + 'producto')
+    .pipe(
+        map(
+           (dato: Array<Product>) => this.productTransform(dato)
+      )
+    )
   }
 
 
-  getProductos(): Observable<Array<Product>> {
-    return this.http.get<Array<Array<Product>>>(environment.API_BASE + 'producto')
-      .pipe(
-        map(data => data.pop().map(item => this.producto.fromJson(item)))
-      );
+  productTransform(datos: Array<Product>): Array <Product> {
+    return datos;
   }
-
  
   getOneProducto( id: string | number) {  // id: string | number
    /*  return this.http.get<Product>(environment.API_BASE + 'producto/' + id).subscribe(
@@ -44,10 +40,10 @@ export class ProductoService {
       } 
     );*/
   }
-/*
-  saveProducto(prod: Producto) {
-    return this.http.post<Producto>(environment.API_BASE + 'producto/', prod).subscribe((p: Producto) => {
-      this.productos.push(p);
+
+  saveProducto(prod: Product) {
+    return this.http.post<Product>(environment.API_BASE + 'producto/', prod).subscribe((p: Product) => {
+      this.products.push(p);
       this.notificarCambios();
     });
     console.log( ' Servicio lo guardo ' + prod.nombre );
@@ -60,7 +56,7 @@ export class ProductoService {
     // });
     console.log('Hola verano ' + id);
   }
-  updateProducto(id: string | number, nuevoProd: Producto){
+  updateProducto(id: string | number, nuevoProd: Product){
     console.log('a ver ' + nuevoProd + '--' + id);
     // return this.http.put(environment.API_BASE + 'producto/${id}', nuevoProd).subscribe((p: Producto) => {
     //   this.productos.push(p);
@@ -69,6 +65,6 @@ export class ProductoService {
   }
 
   notificarCambios(){
-    this.productos$.next(this.productos);
-  } */
+    /*  this.product$.next(this.products);  */
+  } 
 }

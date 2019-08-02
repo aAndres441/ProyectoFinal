@@ -13,11 +13,10 @@
         <th> Descrpción</th>
         <th> Imagen</th>
         <th> Hora</th>
-        <th> Operación</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let p of productPrueba">
+      <tr *ngFor="let p of productPrueba" (click) = "showDetail(p)">
         <td>{{p.nombre}}
         </td>
         <td>{{p.descripcion}}
@@ -30,14 +29,20 @@
           {{p.fecha | date: 'yyy-MM-dd'}}
         </td>
         <td>
-          <button (click)=" showDetail() " class="mr-2 mt-4"> <i class="fas fa-info-circle mr-2"
+         <!--  <button (click)=" showDetail() " class="mr-2 mt-4"> <i class="fas fa-info-circle mr-2"
               style="color: rgb(173, 226, 28)"></i> </button>
-          <!--           <button (click)="showForm()" id="btnForma"> <i class="fas fa-plus mr-3 " style="color: rgb(173, 226, 28)"></i></button>
+          --> <!--           <button (click)="showForm()" id="btnForma"> <i class="fas fa-plus mr-3 " style="color: rgb(173, 226, 28)"></i></button>
  -->
         </td>
       </tr>
     </tbody>
   </table>
+
+  <!-- MAndar DATOS -->
+ <!-- <select [(ngModel)]='ver' (ngModel)= "onChange($event)" name="slcDato" id="slcDato">
+   <option [ngValue]='detail'>detail</option>
+   <option [ngValue]='form'>form</option>
+ </select>  -->
 
   <!-- <button (click)="showForm()" id="btnForma"> <i class="fa fa-leaf mr-3 " style="color: rgb(173, 226, 28)"></i>Show form
   </button> -->

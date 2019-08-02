@@ -16,6 +16,7 @@ import { EmployeeComponent } from './pages/employee/containers/employee/employee
 import { ShippingComponent } from './pages/shipping/container/shipping/shipping.component';
 import { SaleComponent } from './pages/sale/container';
 import { BuyComponent } from './pages/buy/container';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
 ;
 /*import { 
   ProductFormComponent,
@@ -24,6 +25,16 @@ import { BuyComponent } from './pages/buy/container';
  } from './pages/product/components/index';*/
  
 const routes: Routes = [
+  {
+    path: 'inicio',
+    component: InicioComponent/* ,    
+    outlet: 'layout' */
+  },
+  {
+    path: 'layout',
+    component: SidebarComponent,
+    outlet: 'layout'
+ },
   {
     path: '',
     redirectTo: 'inicio',  // determinada para cuando se carga la app
@@ -40,10 +51,7 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent
   },
-  {
-    path: 'inicio',
-    component: InicioComponent
-  },
+ 
 
   {
     path: 'productos',

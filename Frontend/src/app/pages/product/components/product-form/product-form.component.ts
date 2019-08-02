@@ -14,8 +14,8 @@ export class ProductFormComponent implements OnInit {
  /*  @HostBinding('attr.class') cssClass = 'row bg-dark'; */ /* puedo cambiar prop del componente, ej tiene un row negra */
   
   @Input() product: Product;
-  @Output() submitFormNotification =  new EventEmitter < FormGroup > ();
-  @Output() showListForm = new EventEmitter <any>();
+  @Output() submitFormNotification =  new EventEmitter <FormGroup> ();
+  @Output() showComponent  = new EventEmitter <any>();
 
   productForm: FormGroup;
   title = 'Add product';
@@ -33,10 +33,10 @@ export class ProductFormComponent implements OnInit {
   }
 
   showList() {
-    return this.showListForm.emit('list');
+    return this.showComponent.emit({ ' pag ' : 'list'});
   }
   showDetail() {
-    return this.showListForm.emit('detail');
+    return this.showComponent.emit({ ' pag ' : 'detail'});
   }
 
   agregaProdPrueba(name, y, x) {
@@ -76,6 +76,10 @@ export class ProductFormComponent implements OnInit {
     } else {
       this.showErrorAlert('Debe completar todos los campos.')
     }
+  }
+
+  getnombre(){
+    return this.productForm.value();
   }
   /* 
   submit() {

@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, HostBinding } from '@an
 import { Product } from '../../model/product.model';
 import { ActivatedRoute } from '@angular/router';
 import {ProductoService} from '../../../../services/producto.service';
-
+ 
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -10,37 +10,39 @@ import {ProductoService} from '../../../../services/producto.service';
 })
 export class ProductDetailComponent implements OnInit {
 
-  
-  @Input() products: Product[];// Array<Product>;
 
-  @Output() submitFormNotification = new EventEmitter<any>();
+  @Output() showComponent  = new EventEmitter <any>();  /* <string>(); */
+ 
+  @Input() set producto(p) {
+    this.product = p || {products:[]};
+  }
 
-  @Output() showListForm = new EventEmitter <any>();
-  
-  title = 'Product Detail';
-  errorMessage = '';
+  title = 'Product Detail';  
   product: Product | undefined;
-
-  constructor(private route: ActivatedRoute, private productService: ProductoService) { }
+  
+ constructor(private route: ActivatedRoute, private productService: ProductoService ) { }
 
  @HostBinding ('class') classes = 'row';   // agrega uana row al todo el componente de la clase
 
-  ngOnInit() {
-    const param = this.route.snapshot.paramMap.get('id');
-    if (param) {
-      const id = +param;
-      this.getProduct(id);
-    }
-  }
+  ngOnInit() { }
+  
 
   showForm() {
-    return this.showListForm.emit('form');
+    console.log('Al form desde det6alle');
+    return this.showComponent.emit('form');
   }
   showList() {
-    return this.showListForm.emit('list');
+    console.log('A lista desde det6alle');
+    return this.showComponent.emit('list');
   }
-  getProduct(id: number) {
+/* showDetail(p: Product) {
+    console.log(p.nombre);
+    return this.showComponent.emit({' page' : 'detail' , 'product ' : p});
+  }*/
+
+
+  /* getProduct(id: number) {
     this.productService.getOneProducto(id);
-  }
+  } */
 }
 
