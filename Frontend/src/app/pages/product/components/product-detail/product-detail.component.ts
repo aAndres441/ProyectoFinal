@@ -17,11 +17,7 @@ export class ProductDetailComponent implements OnInit {
 
   @Output() showListForm = new EventEmitter <any>();
   
-<<<<<<< HEAD
   title = 'Product Detail';
-=======
-  pageTitle = 'Product Detail';
->>>>>>> e9b080db955db77124a963138cfc4d1fecb6f047
   errorMessage = '';
   product: Product | undefined;
 

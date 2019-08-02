@@ -26,13 +26,8 @@ export class ProductListComponent implements OnInit {
 
   productPrueba = [];
 
-<<<<<<< HEAD
   constructor() {
      this.productPrueba = [ {id:'1', nombre:'Soja', imagen:'https://res.cloudinary.com/carsguide/image/upload/f_auto,fl_lossy,q_auto,t_cg_vehicle_icon_lg/v1/editorial/vhs/Jeep-Compass_0.png', descripcion: 'soja de primera', fecha:'3333'},
-=======
-  constructor() {  
-     this.productPrueba = [ {id:'1', nombre:'Soja', imagen:'s', descripcion: 'soja de primera', fecha:'3333'},
->>>>>>> e9b080db955db77124a963138cfc4d1fecb6f047
      {id:'2', nombre:'Maiz', imagen:'m', descripcion: 'maiz de primera', fecha:'11'},
      {id:'3', nombre:'Palta', imagen:'p', descripcion: 'aplta de primera', fecha:'88'},
      {id:'55', nombre:'hh', imagen:'hhhj', descripcion: 'soja de primera', fecha:'55'}];
