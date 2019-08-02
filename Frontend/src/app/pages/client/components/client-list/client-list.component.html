@@ -1,0 +1,34 @@
+<div class="container-fluid">
+
+    <h3 class="card-header col-md-12 text-center">{{title}}</h3>
+
+    <table class=" table-responsive " border="2">
+        <!-- *ngIf='productPrueba && productPrueba.length  ' -->
+        <thead>
+            <tr>
+                <th> ID</th>
+                <th> Nombre</th>
+                <th> Apellido</th>
+                <th> Direccion</th>
+                <th> Telefono</th>
+                <th>E-mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!-- *ngFor="let c of productPrueba" -->
+                <td>{{c.nombre}}</td>
+
+                <td>{{c.apellido}}</td>
+
+                <td>{{c.direccion}}</td>
+
+                <td>{{c.telefono}}</td>
+
+                <td>{{c.E-mail}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="showForm()" id="btnForma"> <i class="fas fa-plus mr-3 "
+            style="color: rgb(173, 226, 28)"></i></button>
+</div>
