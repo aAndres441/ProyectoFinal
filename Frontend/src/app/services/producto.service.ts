@@ -36,8 +36,6 @@ export class ProductoService {
   }
 
   productTransform(data:Array<Product>):Array<Product>{
-    console.log('Array Prods');
-    console.log(data);
     return data;
   }
 

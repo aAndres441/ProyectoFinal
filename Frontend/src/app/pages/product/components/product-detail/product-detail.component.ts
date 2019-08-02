@@ -13,9 +13,10 @@ export class ProductDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
   showPage(){
-    return this.showComponent.emit("list");
+    return this.showComponent.emit({"page":"list"});
   }
 }

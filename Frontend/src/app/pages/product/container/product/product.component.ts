@@ -8,9 +8,11 @@ import { Router } from '@angular/router';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
+
 export class ProductComponent implements OnInit {
   products : Product[];
   detailProduct : Product = new Product();
+  prod : Product = null;
   showComponent:string = 'list';
   constructor( private productoService: ProductoService, private router: Router ) { }
 
@@ -26,7 +28,27 @@ export class ProductComponent implements OnInit {
       }
     );
   }
-  
+
+
+  showPage(obj:any):string {
+    console.log(obj);
+    this.showComponent = obj.page;
+    if(this.showComponent == "detail"){
+      this.detailProduct = obj.product;
+    }else if(this.showComponent == "list"){
+      
+    }else if(this.showComponent == "form"){
+      if(obj.product){
+        this.prod = obj.product;
+      }else {
+        this.prod = null;
+      }
+    }
+    
+    return this.showComponent;
+  } 
+ 
+    
   eliminar(id: string) {
     //console.log(id);
     //this.productoService.deleteProducto(id);
@@ -35,14 +57,5 @@ export class ProductComponent implements OnInit {
     // this.router.navigate(['producto/add']);
     //routerLink="/producto/edit/{{p.id}}" 
   }
-  showPage(obj:any):string {
-    console.log(obj);
-    this.showComponent = obj.page;
-    if(this.showComponent == "detail"){
-      this.detailProduct = obj.product;
-    }
-    
-    return this.showComponent;
-  } 
- 
+  
 }

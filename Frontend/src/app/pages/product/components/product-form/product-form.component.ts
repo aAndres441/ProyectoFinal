@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../../model/product.model';
-import { FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { FormGroup, Validators, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-product-form',
@@ -13,14 +13,15 @@ export class ProductFormComponent implements OnInit {
 
   public productForm:FormGroup;
 
-  constructor(private fb : FormBuilder) { }
+  constructor() { }
 
   ngOnInit() {
-    this.productForm = this.fb.group({
-      nombre : ['',Validators.required],
-      imagen : ['', Validators.required],
-      descripcion : ['', Validators.required]
-    });
+    this.productForm = new FormGroup({
+        nombre : new FormControl(this.product.nombre,[Validators.required]),
+        imagen : new FormControl(this.product.imagen,[Validators.required]),
+        descripcion : new FormControl(this.product.descripcion, [Validators.required])
+      }
+    );
   }
   onSubmit(){
     console.log("form value: ");
@@ -45,6 +46,6 @@ export class ProductFormComponent implements OnInit {
   } 
 
   showList(){
-    //return this.showComponent.emit({"page":"list"});
+    this.showComponent.emit({"page":"list"});
   }
 }
