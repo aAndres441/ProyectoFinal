@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'; // FormBuilder crear formularios.
-import {ProductoService} from '../../../../services/producto.service';
 import { Product } from '../../model/product.model';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-form',
@@ -10,25 +11,24 @@ import { Product } from '../../model/product.model';
 })
 export class ProductFormComponent implements OnInit {
 
- /*  @HostBinding('attr.class') cssClass = 'row bg-dark'; */ /* puedo cambiar prop */
+ /*  @HostBinding('attr.class') cssClass = 'row bg-dark'; */ /* puedo cambiar prop del componente, ej tiene un row negra */
   
   @Input() product: Product;
   @Output() submitFormNotification =  new EventEmitter < FormGroup > ();
-
   @Output() showListForm = new EventEmitter <any>();
 
   productForm: FormGroup;
-  
+  title = 'Add product';
   losProducts: Product[] = [];
 
-  constructor(private fb: FormBuilder, service: ProductoService) { }
+  constructor(private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
     this.productForm = this.fb.group({
-      nombre: ['', Validators.required],
-      imagen: ['', Validators.required],
+      nombre: ['', Validators.required]
+     /*  imagen: ['', Validators.required],
       descripcion: ['', Validators.required],
-      tmstmp: ['', ]
+      tmstmp: ['', ] */
     });
   }
 
@@ -56,14 +56,13 @@ export class ProductFormComponent implements OnInit {
     console.log('enviando...' + a.value + '--' + s.value);
     this.losProducts.push(null);
   }
-  cancel(){
+  cancel() {
     console.log('cancelo');
   }
 
   onSubmit(): void {
     const form: Product = Object.assign({}, this.product);
     console.warn('Your order has been submitted');
-
     if (this.productForm.valid) {
       this.submitFormNotification.emit(this.productForm.value);
       console.log(form.nombre.toUpperCase());
@@ -83,10 +82,21 @@ export class ProductFormComponent implements OnInit {
     console.log(this.productForm.value);
   } */
 
-
-  showErrorAlert(arg0: string) {
-    throw new Error(' Method not implemented.');
+  
+ /*  addProduct2() {
+    const form: Product = Object.assign({}, this.product);
+    if (this.productForm.valid) {
+      this.submitFormNotification.emit(this.productForm.value);
+      console.log(form.nombre.toUpperCase());
+    
+    } else {
+      this.showErrorAlert('Debe completar todos los campos.')
+    }
+  } */
+  showErrorAlert(arg: string) {
+    console.log(' Method not implemented.' + arg);
   }
+
   guardar() {
     /*  console.log(this.edit + ' se guardara el ' + this.producto.nombre);
  

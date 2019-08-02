@@ -1,57 +1,44 @@
-<div class="container p-4">
-  <!-- fila -->
-  <div class="col-md-12">
-    <div class="card">
-      <h3 class="card-header col-md-12 text-center">Add shipping</h3>
-      <!--ala ruta del router-->
-      <form class="card-body" (submit)="addShipping(cli, descripcion)">
-        <div class="col-12 mt-2">
-          <label>Producto</label>
-          <ul *ngFor='let G of cadena'>
-            <li>{{G}}</li>
-          </ul>
-          <!-- (change)="filterForeCasts ($ event.target.value)"-->
-            <select  #prod class="form-control form-control-sm">
-            <option value="0">Seleccione</option>
-            <option value="1">1</option>
-           <!--  <option *ngfor='let G of cadena' value={{G}}> {{G}} </option>  -->
-            <!--                 <opción  *ngFor = "for p of products"  valor = {{p.name}}> {{p.name}}</option>-->
-           </select> 
-          <!--             <input type="text" #prod class="form-control form-control-sm" placeholder="*" autofocus required minlength="4">
- -->
-        </div>
-        <div class="col-12 mt-2">
-          <label>Descripcion</label>
-          <input type="text" #descripcion class="form-control form-control-sm" placeholder="">
-        </div>
-        <div class="col-12 mt-2">
-          <label>Cliente</label>
-          <input type="text" #cli class="form-control form-control-sm" placeholder="" required minlength="4">
-        </div>
-        <div class="col-12 mt-2">
-          <label>Fecha de entrega</label>
-          <input type="text" #entrega class="form-control form-control-sm" placeholder="*" required minlength="10">
-        </div>
+<div class="card">
+  <h3 class="card-header col-md-12 text-center">{{title}}</h3>
+  <!--ala ruta del router-->
+  <form class="card-body" (submit)="addShipping(cli, descripcion)">
 
-        <!--  *ngIf="nombre.errors.required" -->
-        <!-- 
-          <app-address >  </app-address>
-           <app-documents></app-documents> -->
-
-        <div class="row mt-4 justify-content-center">
-          <div class="col-5 ">
-            <button class="btn btn-success btn-block" (click)="cancel()"> <i
-                class="far fa-times-circle mr-3"></i>Cancel</button>
-          </div>
-          <div class="col-5 ">
-            <button class="btn btn-success btn-block" (click)="addName()"><i class="fa fa-save mr-3"></i>Submit</button>
-          </div>
-        </div>
-      </form>
+    <div class="col-12 mt-2">
+      <label>Producto</label>
+      <ul *ngFor='let G of cadena'>
+        <li>{{G}}</li>
+      </ul>
+      <!-- (change)="filterForeCasts ($ event.target.value)"-->
+      <select #prod class="form-control form-control-sm">
+        <option value="0">Seleccione</option>
+        <option value="1">1</option>
+        <!--  <option *ngfor='let G of cadena' value={{G}}> {{G}} </option>  -->
+        <!--                 <opción  *ngFor = "for p of products"  valor = {{p.name}}> {{p.name}}</option>-->
+      </select>
     </div>
-  </div>
 
+
+    <div class="form-group">
+      <!--           <textarea #descripcion class="form-control form-control-sm" placeholder="descripcion" required minlength="10"></textarea>
+               --> <textarea name="description" #description cols="30" rows="10" placeholder="Descripcion"
+        class="form-control form-control-sm"></textarea>
+    </div>
+
+
+    <div class="form-group">
+      <input type="text" #cli class="form-control form-control-sm" placeholder="* Cliente" required minlength="4">
+    </div>
+
+    <div class="form-group">
+      <input type="date" #fecha class="form-control form-control-sm" placeholder="* Fecha de entrega" required
+        minlength="4">
+    </div>
+    
+
+
+  </form>
   <div class="class-row">
+    <button type = "button" class = "btn btn-outline-success"> Éxito </button>
 
     <button (click)=" showList() " class="mr-2 mt-4"> <i class="fas fa-list-ul mr-2"
         style="color:rgb(173, 226, 28) "></i>ver lista </button>
@@ -60,12 +47,3 @@
 
   </div>
 </div>
-
-
-<!-- <div class="col-md-4">
-        <div class="card card-body text-center">
-          <img  [src]="producto.imagen == '' ? 'asset/sinImagen.png' : producto.imagen" class="card-img-top">
-          <h3>--{{producto.nombre == '' ? ' Falta Titulo' : producto.nombre}}</h3>
-          <p>{{producto.descripcion == '' ? 'Falta descripcion': producto.descripcion}} </p>
-        </div>
-      </div> -->

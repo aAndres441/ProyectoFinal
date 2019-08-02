@@ -1,56 +1,29 @@
-<div class="container p-4">
-  <!-- fila -->
-  <div class="col-md-12">
-    <div class="card">
-      <h3 class="card-header col-md-12 text-center">Add employee</h3>
-      <!--ala ruta del router-->
-      <!-- El generador de formularios crea una FormGroupinstancia. Un grupo de formularios contiene una o varias FormControlentradas de usuario individuales. -->
 
-      <form class="card-body" (submit)="addEmployee(nombre,apellido)">
-        <select class="col-12 mt-2"></select>
 
-        <div class="col-12 mt-2">
-          <label>Name</label>
-          <input type="text" #nombre class="form-control form-control-sm" placeholder="*" autofocus required minlength="4">            
-        </div>
-        <div class="col-12 mt-2">
-          <label>Last Name</label>
-          <input type="text" #lastname class="form-control form-control-sm" placeholder="*" required>
-        </div>
-        <div class="col-12 mt-2">
-          <label>Edad</label>
-          <input type="text" #edad class="form-control form-control-sm" placeholder="*" autofocus required>
-        </div>
+<div class="card">
+  <h3 class="card-header col-md-12 text-center">{{title}}</h3>
 
-        <!--  *ngIf="nombre.errors.required" -->
-        <app-address> </app-address>
-        <app-documents></app-documents>
-        
-          <div class="col-auto d-flex flex-column mt-4">
-            <button class="btn btn-success btn-sm " (click)="addEmployee(nombre,lastname)"><i
-                class="fa fa-save mr-3"></i>Save</button>
-          </div>
-      </form>
-        <div class="col-auto d-flex flex-column ">
-            <!-- col-auto d-flex flex-column -->
-             <button class="btn btn-success btn-sm " (click)='cancel()'> <i
-                class="far fa-times-circle mr-3"></i>Cancel</button>
-              
-          
+  <form class="card-body" (submit)="addEmployee(nombre)">
+
+    <div class="form-group">
+      <input type="text"  name="nombre" class="form-control form-control-sm" placeholder="* Name" autofocus required
+        minlength="4">
     </div>
+
+    <div class="form-group">
+      <input type="text" #lastname class="form-control form-control-sm" placeholder="* Last Name" required>
+    </div>
+
+    <app-address> </app-address>
+    <app-documents></app-documents>
+
+    <div class="class-row mx-0">  
+      <button id="btncncel" class="col-auto  ml-4 mt-4" (click)="cancel()"> <i class="far fa-times-circle mr-2"
+        style="color:rgb(10, 100, 33)"></i>Cancelar</button>
+   
+      <button id="btnAdd" class="col-auto  mr-0 mt-4" (click)="addEmployee()"><i class="far fa-check-circle mr-2" 
+        style="color: rgb(10, 100, 33)"></i>Agregar</button>
+   
   </div>
+  </form>
 </div>
-
-<!--col-md-4 offset-md-4
-   <div class="row mx-0">
-    <div class="col-auto d-flex align-items-center icon-card-container">
-      <i class="fab fa-cc-visa"></i>
-    </div>
-    <div class="col-auto d-flex flex-column">
-      <span class="label-title">Tarjeta</span> -->
-      <!-- <div class="row mt-4 justify-content-center">
-          <div class="col-5 ">
-            <button class="btn btn-success btn-sm " (click)="cancel()"> <i
-                class="far fa-times-circle mr-3"></i>Cancel</button>
-          </div>
-        <div class="col-5 .... -->

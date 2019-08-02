@@ -5,15 +5,20 @@ import {
   HeaderComponent,
   NavigationComponent,
   SidebarComponent,
-  FooterComponent
+  FooterComponent,
+  InicioComponent,
+  HomeComponent
  } from './index';
- 
+
 const APP_SHARED_COMPONENTS = [
   HeaderComponent,
   NavigationComponent,
   SidebarComponent,
-  FooterComponent
+  FooterComponent,
+  HomeComponent,
+  InicioComponent
 ];
+
 const BASE_MODULES = [
   CommonModule
 ]
@@ -22,6 +27,7 @@ const BASE_MODULES = [
   declarations: [
     ...APP_SHARED_COMPONENTS
   ],
+  
   imports: [
     BASE_MODULES
   ],

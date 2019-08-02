@@ -17,6 +17,13 @@ h4, h3{
 
 }
 
+#btnAdd, #btncncel {
+    background-color: whitesmoke;
+    border-color: greenyellow;
+    font-size: 18px;
+    text-align: center;
+}
+
 textarea{
     display : block;
     padding : 10px;

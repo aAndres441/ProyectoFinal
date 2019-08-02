@@ -7,7 +7,7 @@ import {
    DocumentsComponent,
    AddEmployeeComponent,
    AddressComponent,
-  } from './components/';
+  } from './components';
 
 import { EmployeeComponent } from './containers';
 

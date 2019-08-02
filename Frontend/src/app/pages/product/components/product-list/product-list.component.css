@@ -2,6 +2,7 @@
 h4, h3{
     color: mediumseagreen;
 }
-/* #btnForma{
-    float: right;
-} */
+#btnForma{
+    display: block;
+    
+} 

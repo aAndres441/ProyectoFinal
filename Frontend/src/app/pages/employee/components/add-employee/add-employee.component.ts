@@ -16,24 +16,26 @@ export class AddEmployeeComponent implements OnInit {
   @Output() showList = new EventEmitter<any>();
   employeedForm: FormGroup;
   empleadoPrueba: Employee[];
-
+  title = 'Add employee';
+  @Output() submitFormNotification =  new EventEmitter < FormGroup > ();
+  
   constructor(private fb: FormBuilder, private service: EmployeeService, private router: Router) { }
 
   ngOnInit() {
     this.employeedForm = this.fb.group({
       nombre: ['', Validators.required],
-     /*  imagen: ['', Validators.required],
-      descripcion: ['', Validators.required], */
-      tmstmp: ['', ]
+      lastname: ['', Validators.required],
+      documento: ['', Validators.required],
+      dir: ['', Validators.required]
+      /*  imagen: ['', Validators.required],
+       descripcion: ['', Validators.required], */
+      /* tmstmp: ['',] */
     });
   }
-  addEmployee( a: HTMLInputElement, s: HTMLInputElement) {  // para decirle que es un imput desde html
-   
-    console.log('enviando...' + a.value + '--' + s.value);
-    this.empleadoPrueba.push(null);
-  }
+  
+ 
   onBack(): void {
-    
+
   }
   cancel() {
     alert('CONFIRMA ?');
@@ -62,5 +64,9 @@ export class AddEmployeeComponent implements OnInit {
   consultarBtn() {
     this.showList.emit();
   }
+  addEmployee(a: HTMLInputElement, s: HTMLInputElement) {  // para decirle que es un imput desde html
 
+    console.log('enviando...' + a.value + '--' + s.value);
+    this.empleadoPrueba.push(null);
+  }
 }

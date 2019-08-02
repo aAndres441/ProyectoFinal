@@ -9,7 +9,7 @@ import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angula
 export class ShippingFormComponent implements OnInit {
 
   private cadena = [] ;
-  
+  title = 'Add shipping';
   shippingForm: FormGroup;
 
   constructor( private fb: FormBuilder ) {

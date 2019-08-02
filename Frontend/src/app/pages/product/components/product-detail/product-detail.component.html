@@ -1,34 +1,29 @@
-<div class="container p-4">
+<div class="container ">
     <!-- fila -->
+    <h3 class="card-header col-md-12 text-center">{{title}}</h3>
     <div class="col-md-12">
-        <!-- *ngfor='let p of losProductos' -->
-        <div class="class card-center">
-            <h3 class="card-header col-md-12 text-center">Detail product</h3>
+        <p>DEBE MOSTRAR EL DETALLE</p>
 
-            <div class="card-header" class=" text-white d-flex justify-contetn aligne-items-center">
-                <!-- {{p.nombre}} --> NOMBRE
-
-                <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-            </div>
-            <div class="card-body">
-                <img src="{{p.imagen}}" alt="imagen" class="card-img-top">
-                <p>{{p.fecha}}</p>
-                <p>hola</p>
-            </div>
-            <div class="card-footer">
-                <!-- <a routerLink="/productos/agregar" class="btn btn-info btn-block">EDITAR </a> -->
-                <div class="class-row">
-
-                    <button (click)=" showList() " class="col-3 mr-5 mt-4"> <i class="fas fa-list-ul mr-2"
-                            style="color:rgb(173, 226, 28) "></i>ver lista </button>
-                    <button (click)=" showForm() " class="col-8  mt-4 "> <i class="far fa-edit mr-2"
-                            style="color: rgb(173, 226, 28)"></i> EDIT </button>
-
+        <div class="col-md-2" *ngFor="let p of productPrueba">
+            <div class="crd-text-center">
+                <div class="card-header d-flex justify-content-between  align-center text-white bg-dark">
+                    {{p.nombre}}
+                    <button class="btn btn-danger">
+                        <i class="far fa-trash-alt"></i>
+                    </button>
+                </div>
+                <img [src]="p.imagen" class="card-img-top">
+                <div class="card-body">
+                    {{p.descripcion}}
+                    <a href="" class="btn btn-info btn-block ">Editar</a>
                 </div>
             </div>
         </div>
-    </div>
+        <button (click)=" showList() " class="btn btn-info btn-block "> <i class="fas fa-list-ul mr-2"
+                style="color:rgb(173, 226, 28) "></i>ver lista
+        </button>
 
-    
-    
+        <!-- <a routerLink="/products" class="btn btn-info btn-block" class="btn btn-info btn-block ">EDITAR </a> -->
+    </div>
 </div>
+<!-- /**************//////////////////////////////////// -->

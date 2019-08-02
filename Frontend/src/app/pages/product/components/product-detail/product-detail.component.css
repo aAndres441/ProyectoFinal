@@ -9,6 +9,11 @@
 h4, h3{
     color: mediumseagreen;
 }
-.card-header{
+/* .card-header{
     background-color: rgb(189, 235, 219);
+} */
+
+.class{
+    padding : 20px;
+    margin  : 5px;
 }
