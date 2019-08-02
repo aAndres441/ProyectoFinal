@@ -1,0 +1,74 @@
+<p>employee-list works!</p>
+<div class="class">
+  <div class="row mx-0">
+    <div class="col-auto d-flex align-items-center icon-card-container">
+      <i class="fab fa-cc-visa"></i>
+    </div>
+    <div class="col-auto d-flex flex-column">
+      <span class="label-title">Tarjeta</span>
+      <h6 class="m-0">45678899007776344443</h6>
+    </div>
+    <div class="col-auto d-flex flex-column">
+      <span class="label-title">Contrato</span>
+      <h6 class="m-0">909745667</h6>
+    </div>
+    <div class="col-auto d-flex flex-column">
+      <span class="label-title">Cliente</span>
+      <h6 class="m-0">GIOVANNI DONNANGELO DUPUY</h6>
+    </div>
+  </div>
+
+</div>
+<!-- <mat-list>
+    <mat-list-item>
+      <div class="row mx-0">
+        <div class="col-auto d-flex align-items-center icon-card-container">
+          <i class="fab fa-cc-visa"></i>
+        </div>
+        <div class="col-3 d-flex flex-column">
+          <span class="label-title">Tarjeta</span>
+          <h6 class="m-0">45678899007776344443</h6>
+        </div>
+        <div class="col-2 d-flex flex-column">
+          <span class="label-title">Contrato</span>
+          <h6 class="m-0">909745667</h6>
+        </div>
+        <div class="col-6 d-flex flex-column">
+          <span class="label-title">Cliente</span>
+          <h6 class="m-0">GIOVANNI DONNANGELO DUPUY</h6>
+        </div>
+      </div>
+    <mat-ist-item>
+  <mat-list> -->
+<!--  <input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;">
+      <p><label><small>Comentario:</small></label><textarea name="comment" id="comment" cols="58" rows="10" tabindex="8"></textarea></p>
+      <p style="float: right">
+          <input name="submit" type="submit" id="submit" tabindex="5" value="Enviar comentario">
+          <input type="hidden" name="comment_post_ID" value="7143" id="comment_post_ID">
+        <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+        </p> -->
+<ng-template #cargando>
+  <div>
+    <h3>CARGANDO..</h3>
+    <i class="fa fa-spin fa-spinner fa-3x"></i>
+  </div>
+</ng-template>
+<hr>
+<hr>
+<p>HOLA</p>
+<div class="col-auto d-flex flex-column">
+  <!-- *ngfor='let e of employees' -->
+  <div class="class card-center">
+    <div class="card-header" class="bg-dark text-white d-flex justify-contetn aligne-items-center">
+      <!-- {{e.nombre}} -->
+      <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+      <button class="btn btn-danger"><i class="fas fa-edit"></i></button>
+    </div>
+    <img src="{{e.imagen}}" alt="imagen" class="card-img-top">
+
+    <div class="card-body">
+      <p>{{e.fecha}}...</p>
+      <a routerLink="/employees" class="btn btn-info btn-block">NUEVO </a>
+    </div>
+  </div>
+</div>
