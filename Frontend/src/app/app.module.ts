@@ -9,18 +9,18 @@ import {RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import { ProductModule } from './pages/product/product.module';
 import { ProductoService} from './services/producto.service';
-import { HomeComponent } from './pages/home/home.component';
 import { EmployeeService } from './services/employee.service';
 import { EmployeeModule } from './pages/employee/employee.module';
 import { ShippingModule} from './pages/shipping/shipping.module';
 import { SharedModule } from './shared/shared.module';
 import { SaleModule} from './pages/sale/sale.module';
 import { BuyModule} from './pages/buy/buy.module';
+import { ClientModule } from './pages/client/client.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +34,9 @@ import { BuyModule} from './pages/buy/buy.module';
     ShippingModule,
     SharedModule,
     SaleModule,
-    BuyModule
+    BuyModule,
+    ClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     ProductoService,

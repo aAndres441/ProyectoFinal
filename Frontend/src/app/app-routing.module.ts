@@ -8,13 +8,15 @@ import { ProductListComponent } from './pages/product/components/product-list/pr
 import { ProductComponent } from './pages/product/container/index';
 import { ProductModule } from './pages/product/product.module';
 
-import { HomeComponent } from './pages/home/home.component';
+import { HomeComponent } from './shared/home/home.component';
+import { InicioComponent } from './shared/inicio/inicio.component';
 
 import { EmployeeComponent } from './pages/employee/containers/employee/employee.component';
 
 import { ShippingComponent } from './pages/shipping/container/shipping/shipping.component';
 import { SaleComponent } from './pages/sale/container';
 import { BuyComponent } from './pages/buy/container';
+;
 /*import { 
   ProductFormComponent,
   ProductDetailComponent,
@@ -24,24 +26,28 @@ import { BuyComponent } from './pages/buy/container';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',  // determinada para cuando se carga la app
+    redirectTo: 'inicio',  // determinada para cuando se carga la app
     pathMatch: 'full'
   },
 
    {
     path: ' ** ',
-    redirectTo: 'home',
+    redirectTo: 'inicio',
     pathMatch: 'full'  // determinada por si n o coincide ninguna direccion ,Usada para pag 404
   },
 
   {
     path: 'home',
-    component: HomeComponent  // renderiza componente importado
+    component: HomeComponent
+  },
+  {
+    path: 'inicio',
+    component: InicioComponent
   },
 
   {
     path: 'productos',
-    component: ProductComponent  // renderiza componente importado
+    component: ProductComponent 
   },
 
   {
@@ -68,7 +74,6 @@ const routes: Routes = [
     path: 'buy',
     component: BuyComponent
   }
-  
 
 ];
 
