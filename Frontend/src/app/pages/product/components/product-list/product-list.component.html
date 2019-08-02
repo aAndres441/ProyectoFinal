@@ -6,6 +6,7 @@
     </h3>
 
   </div>
+<<<<<<< HEAD
   <table class=" table-responsive " border="2" *ngIf='productPrueba && productPrueba.length; else cargando '>
     <thead>
       <tr>
@@ -14,6 +15,17 @@
         <th> Imagen</th>
         <th> Hora</th>
         <th> Operación</th>
+=======
+  <table class=" table-responsive " border="2" *ngIf='productPrueba && productPrueba.length  '>
+    <thead>
+      <tr>
+        <th> Nombre</th>
+        <th> Descrión</th>
+        <th> Imagen</th>
+        <th> Hora</th>
+        <th> Operación</th>
+        <th>5 Star Rating</th>
+>>>>>>> e9b080db955db77124a963138cfc4d1fecb6f047
       </tr>
     </thead>
     <tbody>
@@ -22,12 +34,22 @@
         </td>
         <td>{{p.descripcion}}
         </td>
+<<<<<<< HEAD
         <td><img [src]="p.imagen == '' ? '/assets/no_image-128.png' : p.imagen" class="card-img-top">
           <!-- <img [src]="p.imagen == '' ? '../../../../../assets/no_image-128.png' : p.imagen" class="card-img-top">-->
           <!-- <img [src]="p.imagen " class="card-img-top"> -->
         </td>
         <td>
           {{p.fecha | date: 'yyy-MM-dd'}}
+=======
+        <td>
+          <!-- <img [src]="p.imagen ==''? '/assets/no_image-128.png"> -->
+          <img src="../../../../../assets/no_image-128.png" [style.width.px]='imageWidth'
+            [style.margin.px]='imageMargin'>
+        </td>
+        <td>
+          {{p.fecha}}
+>>>>>>> e9b080db955db77124a963138cfc4d1fecb6f047
         </td>
         <td>
           <button (click)=" showDetail() " class="mr-2 mt-4"> <i class="fas fa-info-circle mr-2"
@@ -35,6 +57,14 @@
           <!--           <button (click)="showForm()" id="btnForma"> <i class="fas fa-plus mr-3 " style="color: rgb(173, 226, 28)"></i></button>
  -->
         </td>
+<<<<<<< HEAD
+=======
+        <td>
+          <!--    <pm-star [rating]='product.starRating'
+                       (ratingClicked)='onRatingClicked($event)'>
+              </pm-star> -->
+        </td>
+>>>>>>> e9b080db955db77124a963138cfc4d1fecb6f047
       </tr>
     </tbody>
   </table>
@@ -46,6 +76,7 @@
       <a href="#" class="btn btn-primary btn-sm">Crear</a>
     </div> -->
 
+<<<<<<< HEAD
 </div>
 
 <ng-template #cargando>
@@ -53,3 +84,6 @@
       <i class="fa fa-spin fa-spinner fa-3x"></i><h4>Whait a moment please..</h4>
     </div>
   </ng-template>
+=======
+</div>
+>>>>>>> e9b080db955db77124a963138cfc4d1fecb6f047

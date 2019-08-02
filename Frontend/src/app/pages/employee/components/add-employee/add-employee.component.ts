@@ -17,8 +17,12 @@ export class AddEmployeeComponent implements OnInit {
   employeedForm: FormGroup;
   empleadoPrueba: Employee[];
   title = 'Add employee';
+<<<<<<< HEAD
   @Output() submitFormNotification =  new EventEmitter < FormGroup > ();
   
+=======
+
+>>>>>>> e9b080db955db77124a963138cfc4d1fecb6f047
   constructor(private fb: FormBuilder, private service: EmployeeService, private router: Router) { }
 
   ngOnInit() {
@@ -31,12 +35,25 @@ export class AddEmployeeComponent implements OnInit {
        descripcion: ['', Validators.required], */
       /* tmstmp: ['',] */
     });
+<<<<<<< HEAD
   }
   
  
   onBack(): void {
 
   }
+=======
+  }
+  
+  addEmployee(a: HTMLInputElement, s: HTMLInputElement) {  // para decirle que es un imput desde html
+
+    console.log('enviando...' + a.value + '--' + s.value);
+    this.empleadoPrueba.push(null);
+  }
+  onBack(): void {
+
+  }
+>>>>>>> e9b080db955db77124a963138cfc4d1fecb6f047
   cancel() {
     alert('CONFIRMA ?');
     this.router.navigate(['/productos']);

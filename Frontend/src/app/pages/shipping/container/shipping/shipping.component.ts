@@ -15,7 +15,11 @@ export class ShippingComponent implements OnInit {
 
   
   back() {
+<<<<<<< HEAD
     this.router.navigateByUrl('inicio');
+=======
+    this.router.navigateByUrl('home');
+>>>>>>> e9b080db955db77124a963138cfc4d1fecb6f047
   }
 
 }

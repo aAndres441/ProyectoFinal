@@ -1,5 +1,6 @@
  
     <div class="card">
+<<<<<<< HEAD
           <h3 class="card-header col-md-12 text-center">{{title}}</h3>
       <!-- El generador de formularios crea una FormGroupinstancia. Un grupo de formularios contiene una o varias FormControlentradas de usuario individuales. -->
 
@@ -9,12 +10,30 @@
           <input  type="text"  name="nombre"  class="form-control form-control-sm" placeholder="* Name" autofocus required   
             minlength="4" >
 <!-- [(ngModel)]="product.nombre" -->
+=======
+      <h3 class="card-header col-md-12 text-center">{{title}}</h3>
+      <!--ala ruta del router-->
+      <!-- El generador de formularios crea una FormGroupinstancia. Un grupo de formularios contiene una o varias FormControlentradas de usuario individuales. -->
+
+      <form class="card-body" name="productForm"  (submit)="addProduct(nombre)">  <!--submit)="addProduct(nombre,image,descripcion)"  /////////  (ngSubmit)="onSubmit(nombre)"-->
+
+        <div class="form-group" >   <!-- [ngClass]="{'has-error': ((productForm.get('nombre').touched ||productForm.get('nombre').dirty) && productForm.get('nombre').errors)}" -->
+           
+          <input  type="text" #nombre name="nombre"  class="form-control form-control-sm" placeholder="* Name" autofocus required   
+            minlength="4">
+
+>>>>>>> e9b080db955db77124a963138cfc4d1fecb6f047
            <!--  <div class = "alert alert-danger" role = "alert" *ngIf = "nombre.errors && (nombre.touched || nombre.dirty)" >                
                 nombre inválido
               </div>
               <div>{{product.name}}</div> -->
            <!--  
              [(ngModel)]="product.nombre" 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> e9b080db955db77124a963138cfc4d1fecb6f047
             <span class="help-block"
             *ngIf="((productForm.get('nombre').touched ||
                      productForm.get('nombre').dirty) &&
@@ -24,13 +43,32 @@
         </span>
       </span> -->
          </div> 
+<<<<<<< HEAD
         
         <div class="form-group"> 
           <input type="url" name='image' #image placeholder="Imagen" class="form-control form-control-sm" >
+=======
+
+        <!-- ////////////   SELECT  ////////// -->
+        <!-- <div class="form-group">
+  <label for="power">Hero Power</label>
+  <select class="form-control"  id="power"
+          required
+          [(ngModel)]="model.power" name="power">
+    <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+  </select>
+</div>
+          </div> -->
+        <!-- //////////////////////////////// -->
+        
+        <div class="form-group"> 
+          <input type="url" name='image' #image placeholder="Imagen" class="form-control">
+>>>>>>> e9b080db955db77124a963138cfc4d1fecb6f047
         </div>
 
         <div class="form-group">
 <!--           <textarea #descripcion class="form-control form-control-sm" placeholder="descripcion" required minlength="10"></textarea>
+<<<<<<< HEAD
  -->         <textarea name="description"   cols="30" rows="10" placeholder="Descripcion" class="form-control form-control-sm"></textarea> 
         </div>
         
@@ -39,12 +77,23 @@
               style="color:rgb(10, 100, 33)"></i>Cancelar</button>
          
             <button id="btnAdd" class="col-auto  mr-0 mt-4" (click)="addProduct()"><i class="far fa-check-circle mr-2" 
+=======
+ -->         <textarea name="description"  #description cols="30" rows="10" placeholder="Descripcion" class="form-control form-control-sm"></textarea> 
+        </div>
+        
+        <div class="class-row mx-0">  
+            <button id="btncncel" class="col-auto  mr-2 mt-4" (click)="cancel()"> <i class="far fa-times-circle mr-2"
+              style="color:rgb(10, 100, 33)"></i>Cancelar</button>
+         
+            <button id="btnAdd" class="col-auto  mr-2 mt-4" (click)="addProduct()"><i class="far fa-check-circle mr-2" 
+>>>>>>> e9b080db955db77124a963138cfc4d1fecb6f047
               style="color: rgb(10, 100, 33)"></i>Agregar</button>
          
         </div>
         <!-- {{product|json}} -->
       </form>
     </div>
+<<<<<<< HEAD
   
   <div class="class-row mx-0">    
     <button (click)=" showList() " class="col-auto  mr-2 mt-4"> <i class="fas fa-list-ul mr-2"
@@ -62,6 +111,19 @@
            <img [src]="product.imagen" >
         </div>
     </div>
+=======
+  
+  <div class="class-row mx-0">    
+    <button (click)=" showList() " class="col-auto  mr-2 mt-4"> <i class="fas fa-list-ul mr-2"
+        style="color:rgb(173, 226, 28) "></i>ver lista </button>
+    <button (click)=" showDetail() " class="col-auto ml-2 mt-4"> <i class="fas fa-info-circle mr-2"
+        style="color: rgb(173, 226, 28)"></i> ver detalle </button>
+  </div>
+
+  
+
+
+>>>>>>> e9b080db955db77124a963138cfc4d1fecb6f047
 
 <!-- <div class="row mx-0">
     <div class="col-auto d-flex align-items-center icon-card-container">

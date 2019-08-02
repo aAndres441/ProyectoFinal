@@ -2,7 +2,10 @@ import { Component, OnInit, Input, Output, EventEmitter, HostBinding } from '@an
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'; // FormBuilder crear formularios.
 import { Product } from '../../model/product.model';
 import { Router } from '@angular/router';
+<<<<<<< HEAD
 import { ActivatedRoute } from '@angular/router';
+=======
+>>>>>>> e9b080db955db77124a963138cfc4d1fecb6f047
 
 @Component({
   selector: 'app-product-form',
@@ -11,7 +14,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductFormComponent implements OnInit {
 
+<<<<<<< HEAD
  /*  @HostBinding('attr.class') cssClass = 'row bg-dark'; */ /* puedo cambiar prop del componente, ej tiene un row negra */
+=======
+ /*  @HostBinding('attr.class') cssClass = 'row bg-dark'; */ /* puedo cambiar prop */
+>>>>>>> e9b080db955db77124a963138cfc4d1fecb6f047
   
   @Input() product: Product;
   @Output() submitFormNotification =  new EventEmitter < FormGroup > ();
@@ -21,7 +28,11 @@ export class ProductFormComponent implements OnInit {
   title = 'Add product';
   losProducts: Product[] = [];
 
+<<<<<<< HEAD
   constructor(private fb: FormBuilder, private router: Router) { }
+=======
+  constructor(private fb: FormBuilder) { }
+>>>>>>> e9b080db955db77124a963138cfc4d1fecb6f047
 
   ngOnInit() {
     this.productForm = this.fb.group({
@@ -69,7 +80,10 @@ export class ProductFormComponent implements OnInit {
     }
     // this.productForm.reset();
   }
+<<<<<<< HEAD
   
+=======
+>>>>>>> e9b080db955db77124a963138cfc4d1fecb6f047
   submit() {
     if (this.productForm.valid) {
       console.log(this.productForm.value);

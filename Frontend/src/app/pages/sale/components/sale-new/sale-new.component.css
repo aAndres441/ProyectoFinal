@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 #btnAdd, #btncncel {
     background-color: whitesmoke;
     border-color: greenyellow;
     font-size: 18px;
     text-align: center;
+=======
+#btnAdd, #btncncel {
+    background-color: whitesmoke;
+    border-color: greenyellow;
+    font-size: 18px;
+    text-align: center;
+>>>>>>> e9b080db955db77124a963138cfc4d1fecb6f047
 }
