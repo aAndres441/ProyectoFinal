@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 import { Component, OnInit, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 import { Product } from '../../model/product.model';
 import { ActivatedRoute } from '@angular/router';
 import { ProductoService } from '../../../../services/producto.service';
+=======
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Product } from '../../model/product.model';
+>>>>>>> b3207864e932ce850ca151574599540d00319710
 
 @Component({
   selector: 'app-product-detail',
@@ -9,6 +14,7 @@ import { ProductoService } from '../../../../services/producto.service';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
+<<<<<<< HEAD
 
 
   @Output() showComponent = new EventEmitter<any>();  /* <string>(); */
@@ -45,3 +51,18 @@ export class ProductDetailComponent implements OnInit {
   } */
 }
 
+=======
+  @Output() showComponent = new EventEmitter<any>();
+  @Input() detailProduct : Product = new Product();
+
+  constructor() { }
+
+  ngOnInit() {
+    
+  }
+
+  showPage(){
+    return this.showComponent.emit({"page":"list"});
+  }
+}
+>>>>>>> b3207864e932ce850ca151574599540d00319710

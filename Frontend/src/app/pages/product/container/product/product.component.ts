@@ -9,6 +9,7 @@ import { Observable, from } from 'rxjs';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
+<<<<<<< HEAD
 export class ProductComponent implements OnInit {
  
  /* $products: Observable <Product []>;*/
@@ -18,12 +19,21 @@ export class ProductComponent implements OnInit {
   showComponent = 'list';
   prod: Product = null;
 
+=======
+
+export class ProductComponent implements OnInit {
+  products : Product[];
+  detailProduct : Product = new Product();
+  prod : Product = null;
+  showComponent:string = 'list';
+>>>>>>> b3207864e932ce850ca151574599540d00319710
   constructor( private productoService: ProductoService, private router: Router ) { }
 
    ngOnInit(): void {
     this.getProductos();
   }
 
+<<<<<<< HEAD
   getProductos(): void {
      this.productoService.getProductos().subscribe(
        (dato) => {this.products = dato;
@@ -69,6 +79,36 @@ export class ProductComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
+=======
+  getProductos():void{
+    this.productoService.getProductos().subscribe(
+      (data) => {
+        this.products = data
+      }
+    );
+  }
+
+
+  showPage(obj:any):string {
+    console.log(obj);
+    this.showComponent = obj.page;
+    if(this.showComponent == "detail"){
+      this.detailProduct = obj.product;
+    }else if(this.showComponent == "list"){
+      
+    }else if(this.showComponent == "form"){
+      if(obj.product){
+        this.prod = obj.product;
+      }else {
+        this.prod = null;
+      }
+    }
+    
+    return this.showComponent;
+  } 
+ 
+    
+>>>>>>> b3207864e932ce850ca151574599540d00319710
   eliminar(id: string) {
     // console.log(id);
     // this.productoService.deleteProducto(id);
@@ -83,6 +123,10 @@ export class ProductComponent implements OnInit {
   sayHello() {
     alert('Digo hola a toda la hinchada');
   }
+<<<<<<< HEAD
+=======
+  
+>>>>>>> b3207864e932ce850ca151574599540d00319710
 }
 
 /*   back() {

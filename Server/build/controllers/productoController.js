@@ -15,8 +15,7 @@ const database_1 = __importDefault(require("../database"));
 class ProductoController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const prods = yield database_1.default.query('SELECT * FROM producto');
-            res.json({ prods });
+            res.json(yield database_1.default.query('SELECT * FROM producto'));
         });
     }
     create(req, res) {
@@ -46,7 +45,7 @@ class ProductoController {
             if (prod.length > 0) {
                 return res.json(prod[0]);
             }
-            res.status(404).json({ message: 'El juego no se ah encontrado!' });
+            res.status(404).json({ message: 'La persona no se ah encontrado!' });
         });
     }
 }

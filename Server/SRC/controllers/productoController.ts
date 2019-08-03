@@ -4,8 +4,11 @@ import pool from '../database';
 class ProductoController {
     
     public async list (req:Request,res:Response){
+<<<<<<< HEAD
        /*  const prods = await pool.query('SELECT * FROM producto');
         res.json({prods}); */
+=======
+>>>>>>> b3207864e932ce850ca151574599540d00319710
         res.json(await pool.query('SELECT * FROM producto'));
     }
     
@@ -32,7 +35,7 @@ class ProductoController {
         if(prod.length>0) {
             return res.json(prod[0]);
         }
-        res.status(404).json({message:'El juego no se ah encontrado!'})
+        res.status(404).json({message:'La persona no se ah encontrado!'})
     }
 }
 const productoController = new ProductoController();

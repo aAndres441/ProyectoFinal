@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 import { Component, OnInit, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'; // FormBuilder crear formularios.
 import { Product } from '../../model/product.model';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+=======
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Product } from '../../model/product.model';
+import { FormGroup, Validators, FormControl} from '@angular/forms';
+>>>>>>> b3207864e932ce850ca151574599540d00319710
 
 @Component({
   selector: 'app-product-form',
@@ -10,6 +16,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-form.component.css']
 })
 export class ProductFormComponent implements OnInit {
+<<<<<<< HEAD
 
  /*  @HostBinding('attr.class') cssClass = 'row bg-dark'; */ /* puedo cambiar prop del componente, ej tiene un row negra */
   
@@ -65,12 +72,37 @@ export class ProductFormComponent implements OnInit {
 
   getnombre(){
     return this.productForm.value();
+=======
+  @Input() product : Product;
+  @Output() showComponent = new EventEmitter<any>();
+
+  public productForm:FormGroup;
+
+  constructor() { }
+
+  ngOnInit() {
+    this.productForm = new FormGroup({
+        nombre : new FormControl(this.product.nombre,[Validators.required]),
+        imagen : new FormControl(this.product.imagen,[Validators.required]),
+        descripcion : new FormControl(this.product.descripcion, [Validators.required])
+      }
+    );
+  }
+  onSubmit(){
+    console.log("form value: ");
+    console.log(this.productForm);
+    //this.showComponent.emit({"page":"list","form" : this.productForm.value});
+  }
+
+  guardar() {
+>>>>>>> b3207864e932ce850ca151574599540d00319710
   }
   /* 
   submit() {
     console.log(this.productForm.value);
   } */
 
+<<<<<<< HEAD
   
  /*  addProduct2() {
     const form: Product = Object.assign({}, this.product);
@@ -136,5 +168,22 @@ export class ProductFormComponent implements OnInit {
   }
   
  
+=======
+  editProducto(){
+  }
 
+  get nombre (){
+    return this.productForm.get('nombre');
+  }
+  get imagen (){
+    return this.productForm.get('imagen');
+  }
+  get descripcion (){
+    return this.productForm.get('descripcion');
+  } 
+>>>>>>> b3207864e932ce850ca151574599540d00319710
+
+  showList(){
+    this.showComponent.emit({"page":"list"});
+  }
 }

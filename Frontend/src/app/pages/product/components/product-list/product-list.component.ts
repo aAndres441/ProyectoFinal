@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 import { Component, OnInit, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 import { Product } from '../../model/product.model';
 import { ProductoService } from '../../../../services/producto.service';
 import { NgModel } from '@angular/forms';
+=======
+import { Product } from './../../model/product.model';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+>>>>>>> b3207864e932ce850ca151574599540d00319710
 
 @Component({
   selector: 'app-product-list',
@@ -10,6 +15,7 @@ import { NgModel } from '@angular/forms';
 })
 export class ProductListComponent implements OnInit {
 
+<<<<<<< HEAD
   // @HostBinding('class') classes = 'row';  // todo el componente tendra una fila
 
   @Input() products: Array<Product>;
@@ -51,6 +57,15 @@ export class ProductListComponent implements OnInit {
     console.log(/* p.nombre  + */ 'Al form');
     if (!p) { p = new Product(); }
     return this.showComponent.emit({ 'page': 'form', "product": p });
+=======
+  @Input() products : Array<Product>;
+  @Output() showComponent = new EventEmitter<any>();
+
+  constructor() {  }
+
+  ngOnInit() {
+   
+>>>>>>> b3207864e932ce850ca151574599540d00319710
   }
   edit(p: Product) {
     return this.showComponent.emit({ "page": "form", "product": p });
@@ -58,6 +73,7 @@ export class ProductListComponent implements OnInit {
 }
 
 
+<<<<<<< HEAD
 /*   @Output() submitFormNotification = new EventEmitter<any>();
  */
 
@@ -73,3 +89,17 @@ export class ProductListComponent implements OnInit {
   /*  toggleImage(): void {
      this.showImage = !this.showImage;
    } */
+=======
+  showDetail(p:Product){
+    return this.showComponent.emit({"page":"detail","product":p});
+  }
+
+  showForm(p:Product){
+    if(!p) p = new Product();
+    return this.showComponent.emit({"page":"form","product":p});
+  }
+  edit(p:Product){
+    return this.showComponent.emit({"page":"form","product":p});
+  }
+}
+>>>>>>> b3207864e932ce850ca151574599540d00319710

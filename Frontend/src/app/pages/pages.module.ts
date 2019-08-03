@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PagesComponent } from './pages.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+<<<<<<< HEAD
 // MODULOS DE PAGINAS
 import { ProductModule } from './product/product.module';
 
@@ -23,6 +24,17 @@ const PAGES_MODULES = [
   SaleModule,
   BuyModule,
   ClientModule
+=======
+//MODULOS DE PAGINAS
+import { ProductModule } from './product/product.module';
+import { ThemeModule } from '../theme/theme.module';
+import { EmployeeModule } from './employee/employee.module';
+
+const PAGES_MODULES = [
+  ProductModule,
+  EmployeeModule,
+  ThemeModule
+>>>>>>> b3207864e932ce850ca151574599540d00319710
 ];
 
 @NgModule({

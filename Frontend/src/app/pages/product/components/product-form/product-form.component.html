@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  
     <div class="card">
           <h3 class="card-header col-md-12 text-center">{{title}}</h3>
@@ -44,6 +45,26 @@
         </div>
         <!-- {{product|json}} -->
       </form>
+=======
+<form [formGroup]="productForm" class="jumbotron">
+  <div class="col-md-4 offset-md-2">
+    <div class="card">
+      <div class="card-header">Add Product</div>
+      <div class="card-body">
+          <div class="form-group">
+            <div class="col-8">
+              <input type="text" class="form-control form-control-sm" formControlName="nombre" placeholder="Nombre" required autofocus >
+            </div>
+            <div class="col-10">
+              <textarea type="text" class="form-control form-control-sm" formControlName="imagen" placeholder="Imagen" required > </textarea>      
+            </div>
+            <div class="col-10">
+              <textarea  type="text" class="form-control form-control-sm" formControlName="descripcion" placeholder="Descripcion" required ></textarea>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-sm col-3" (click)="onSubmit()" ><i class="fa fa-save"></i>Enviar</button>
+      </div>
+>>>>>>> b3207864e932ce850ca151574599540d00319710
     </div>
   <div><i class="fas fa-edit" (click)="edit(p)"></i></div>
   <div class="class-row mx-0">    
@@ -52,6 +73,7 @@
     <button (click)=" showDetail() " class="col-auto ml-2 mt-4"> <i class="fas fa-info-circle mr-2"
         style="color: rgb(173, 226, 28)"></i> ver detalle </button>
   </div>
+<<<<<<< HEAD
 
   <!-- /////////////////////////////////////////////////////////////////// -->
 
@@ -80,3 +102,9 @@
       </div>
     </div> 
   -->
+=======
+</form>
+<button (click)="showList()">Atras</button>
+ 
+   
+>>>>>>> b3207864e932ce850ca151574599540d00319710

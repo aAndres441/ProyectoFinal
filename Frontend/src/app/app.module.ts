@@ -1,5 +1,6 @@
 
 import { HttpClientModule } from '@angular/common/http';
+<<<<<<< HEAD
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -25,17 +26,35 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const PAGES_MODULES = [
   ProductModule,
   SharedModule
+=======
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import {ProductoService} from './services/producto.service';
+import { ThemeModule } from './theme/theme.module';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+const PAGES_MODULES = [
+  ProductModule,
+  ThemeModule
+>>>>>>> b3207864e932ce850ca151574599540d00319710
 ];
 
 @NgModule({
   declarations: [
     AppComponent
   ],
+
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
+<<<<<<< HEAD
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
@@ -47,14 +66,22 @@ const PAGES_MODULES = [
     BuyModule,
     ClientModule,
     BrowserAnimationsModule */
+=======
+    RouterModule,
+    ...PAGES_MODULES
+>>>>>>> b3207864e932ce850ca151574599540d00319710
   ],
   providers: [
     ProductoService,
     EmployeeService
   ],
   bootstrap: [AppComponent],
+<<<<<<< HEAD
 
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
+=======
+  schemas :[CUSTOM_ELEMENTS_SCHEMA]
+>>>>>>> b3207864e932ce850ca151574599540d00319710
 })
 export class AppModule { }
