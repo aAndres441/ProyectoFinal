@@ -4,11 +4,6 @@ import pool from '../database';
 class ProductoController {
     
     public async list (req:Request,res:Response){
-<<<<<<< HEAD
-       /*  const prods = await pool.query('SELECT * FROM producto');
-        res.json({prods}); */
-=======
->>>>>>> b3207864e932ce850ca151574599540d00319710
         res.json(await pool.query('SELECT * FROM producto'));
     }
     
