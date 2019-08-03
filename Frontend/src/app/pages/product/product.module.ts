@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {SharedModule} from '../../shared/shared.module';
 import {RouterModule, Routes} from '@angular/router';
-/* import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';  // Para utilizar la API de formularios reactivos 
+/* import { BrowserModule } from '@angular/platform-browser';
 import {AppRoutingModule} from '../../app-routing.module';
 import { FormsModule } from '@angular/forms';
  */
@@ -39,7 +39,8 @@ const APP_CONTAINERS_PRODUCTS = [
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
     /* 
     BrowserModule,
     ReactiveFormsModule,

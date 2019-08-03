@@ -33,40 +33,25 @@ export class ProductFormComponent implements OnInit {
   }
 
   showList() {
-    return this.showComponent.emit({ ' pag ' : 'list'});
+     this.showComponent.emit({ ' pag ' : 'list'});
   }
   showDetail() {
-    return this.showComponent.emit({ ' pag ' : 'detail'});
+     this.showComponent.emit({ ' pag ' : 'detail'});
   }
 
-  agregaProdPrueba(name, y, x) {
-    this.losProducts.push(name.value);
-    this.productForm.reset();
-    console.warn('ESE lente');
-    console.log(name.value, x.value, y.value);
-    console.log(this.losProducts.length);
-    name.value = '';
-    y.value = '';
-    x.value = '';
-    return false;
-    // cancela el reseteado de la pagina
-  }
-
-  addProduct( a: HTMLInputElement, s: HTMLInputElement) {  // para decirle que es un imput desde html
-    console.log('enviando...' + a.value + '--' + s.value);
-    this.losProducts.push(null);
-  }
   cancel() {
     console.log('cancelo');
   }
 
-  onSubmit(): void {
-    const form: Product = Object.assign({}, this.product);
+  onSubmit() {
+    console.log("form value: ");
+    console.log(this.productForm);
+   /*  const form: Product = Object.assign({}, this.product);
     console.warn('Your order has been submitted');
     if (this.productForm.valid) {
       this.submitFormNotification.emit(this.productForm.value);
       console.log(form.nombre.toUpperCase());
-    }
+    } */
     // this.productForm.reset();
   }
   
@@ -96,6 +81,24 @@ export class ProductFormComponent implements OnInit {
     } else {
       this.showErrorAlert('Debe completar todos los campos.')
     }
+  } */
+  /* 
+  agregaProdPrueba(name, y, x) {
+    this.losProducts.push(name.value);
+    this.productForm.reset();
+    console.warn('ESE lente');
+    console.log(name.value, x.value, y.value);
+    console.log(this.losProducts.length);
+    name.value = '';
+    y.value = '';
+    x.value = '';
+    return false;
+    // cancela el reseteado de la pagina
+  }
+
+  addProduct( a: HTMLInputElement, s: HTMLInputElement) {  // para decirle que es un imput desde html
+    console.log('enviando...' + a.value + '--' + s.value);
+    this.losProducts.push(null);
   } */
   showErrorAlert(arg: string) {
     console.log(' Method not implemented.' + arg);

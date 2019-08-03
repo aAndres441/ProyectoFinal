@@ -30,12 +30,43 @@ export class ProductComponent implements OnInit {
       }
     ); 
   }
-  getProductos2 () : void {
-    this . productoService . getProductos ().subscribe (
-      ( datos ) => {
-        this . products  =  datos;
+
+  showPage(obj: any): string {
+    console.log(obj);
+    this.showComponent = obj.page;
+    if (this.showComponent === 'detail') {
+      this.detailProduct = obj.product;
+    } else if (this.showComponent === 'list') {
+
+    } else if (this.showComponent === 'form') {
+      if (obj.product) {
+        this.prod = obj.product;
+      } else {
+        this.prod = null;
       }
-    );
+    }
+
+    return this.showComponent;
+  } 
+ /*  showPage(obj: any): string {
+    console.log(obj);
+    this.showComponent = obj.page;
+    if (this.showComponent === 'detail') {
+      this.detailProduct = obj.producto;
+    } else if (this.showComponent === 'list') {
+
+    } else if (this.showComponent === ' form ') {
+      if (obj.producto) {
+        this.prod = obj.producto;
+      } else {
+        this.prod = null;
+      }
+    }
+    return this.showComponent;
+  } */
+
+  back(): void {
+    this.router.navigate(['/']);
   }
 
   eliminar(id: string) {
@@ -46,34 +77,12 @@ export class ProductComponent implements OnInit {
     // this.router.navigate(['producto/add']);
     // routerLink="/producto/edit/{{p.id}}"
   }
-  onSubmitForm(form: any): void {
-  }
+  /* onSubmitForm(form: any): void {
+  } */
 
   sayHello() {
     alert('Digo hola a toda la hinchada');
   }
-
-  showPage(obj: any): string {
-    console.log(obj);
-    this.showComponent = obj.page;
-    if (this.showComponent === 'detail') {
-      this.detailProduct = obj.producto;
-    } else if (this.showComponent === 'form'){
-
-    } else  if ( this . showComponent  ===  ' form ' ) {
-      if (  obj . producto) {
-        this . prod  =  obj . producto ;
-      } else {
-        this . prod  =  null ;
-      }
-    }
-    return this.showComponent;
-  }
-
-  back(): void {
-    this.router.navigate(['/']);
-  }
-
 }
 
 /*   back() {

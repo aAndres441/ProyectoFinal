@@ -4,6 +4,8 @@ import cors from 'cors';
 import express, { Application } from 'express';
 import indexRoutes from './routes/indexRoutes';
 import productosRoutes from './routes/productosRoutes';
+import employeeRoutes from './routes/employeeRoutes';
+import personRoutes from './routes/personRoutes';
 
 class Server {
 
@@ -23,7 +25,9 @@ class Server {
     }
     routes():void{
         this.app.use('/', indexRoutes);
-        this.app.use('/api/producto', productosRoutes);
+        this.app.use('/api/productos', productosRoutes);
+        this.app.use('/api/empleados', employeeRoutes);
+        this.app.use('/api/personas', personRoutes);
     }
     start():void{
         this.app.listen(this.app.get('port'), () => {

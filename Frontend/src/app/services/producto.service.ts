@@ -13,13 +13,13 @@ import { Product } from '../pages/product/model/product.model'
 export class ProductoService {
 
     private producto: ProductSerializer;
-   private products: Product [] = [];
+    private products: Product [] = [];
 
   constructor(private http: HttpClient) {
   }
 
    getProductos(): Observable<Product[]> {
-    return this.http.get<Array<Product>>(environment.API_BASE + 'producto')
+    return this.http.get<Array<Product>>(environment.API_BASE + 'productos')
     .pipe(
         map(
            (dato: Array<Product>) => this.productTransform(dato)
