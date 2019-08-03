@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-<<<<<<< HEAD
 import {SharedModule} from '../../shared/shared.module';
 
 import {
-  EmployeeListComponent,
-   DocumentsComponent,
-   AddEmployeeComponent,
-   AddressComponent,
+  EmployeeListComponent
   } from './components';
 
 import { EmployeeComponent } from './containers';
+import { DocumentsComponent } from './components/documents/documents.component';
+import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
+import { AddressComponent } from './components/address/address.component';
 
 const APP_COMPONENTS_EMPLOYEE = [
   DocumentsComponent,
@@ -35,27 +34,3 @@ const APP_CONTAINERS_EMPLOYEE = [
  
   })
   export class EmployeeModule { }
-=======
-import {EmployeeListComponent,EmployeeFormComponent,EmployeeDetailComponent} from './components/index'
-import {EmployeeComponent} from './container/index'
-
-const APP_COMPONENTS_PRODUCTS = [
-  EmployeeDetailComponent,
-  EmployeeFormComponent,
-  EmployeeListComponent
-]
-const APP_CONTAINERS_PRODUCTS = [
-  EmployeeComponent
-]
-
-@NgModule({
-  declarations: [
-    ...APP_COMPONENTS_PRODUCTS,
-    ...APP_CONTAINERS_PRODUCTS
-  ],
-  imports: [
-    CommonModule
-  ]
-})
-export class EmployeeModule { }
->>>>>>> b3207864e932ce850ca151574599540d00319710

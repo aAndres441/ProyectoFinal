@@ -12,26 +12,11 @@ import { Product } from '../pages/product/model/product.model'
 
 export class ProductoService {
 
-<<<<<<< HEAD
-    private producto: ProductSerializer;
-    private products: Product [] = [];
-
-=======
   private productSerializer : ProductSerializer;
   private products : Product[] = [];
->>>>>>> b3207864e932ce850ca151574599540d00319710
   constructor(private http: HttpClient) {
   }
 
-<<<<<<< HEAD
-   getProductos(): Observable<Product[]> {
-    return this.http.get<Array<Product>>(environment.API_BASE + 'productos')
-    .pipe(
-        map(
-           (dato: Array<Product>) => this.productTransform(dato)
-      )
-    )
-=======
 
   getProductos(): Observable<Product[]> {
     return this.http.get<Array<Product>>(environment.API_BASE + 'productos').pipe(
@@ -43,13 +28,8 @@ export class ProductoService {
 
   productTransform(data:Array<Product>):Array<Product>{
     return data;
->>>>>>> b3207864e932ce850ca151574599540d00319710
   }
 
-
-  productTransform(datos: Array<Product>): Array <Product> {
-    return datos;
-  }
  
   getOneProducto( id: string | number) {  // id: string | number
    /*  return this.http.get<Product>(environment.API_BASE + 'producto/' + id).subscribe(

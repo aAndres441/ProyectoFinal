@@ -11,5 +11,10 @@ export class SaleNewComponent implements OnInit {
 
   ngOnInit() {
   }
+  cancel(){
 
+  }
+  addProduct(){
+    
+  }
 }
