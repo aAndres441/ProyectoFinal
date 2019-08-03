@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { InicioComponent } from './theme/components/inicio/inicio.component';
+import { InicioComponent } from './shared/inicio/inicio.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: 'inicio', pathMatch: 'full' },

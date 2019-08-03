@@ -10,10 +10,12 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeeService } from './services/employee.service';
 import { ProductModule } from './pages/product/product.module';
+import { SharedModule } from './shared/shared.module';
 
 const PAGES_MODULES = [
   ProductModule,
-  ThemeModule
+  ThemeModule,
+  SharedModule
 ];
 
 @NgModule({
