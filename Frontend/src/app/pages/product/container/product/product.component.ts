@@ -10,65 +10,43 @@ import { Observable, from } from 'rxjs';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
- 
- /* $products: Observable <Product []>;*/
- 
-  products: Product[];
-  detailProduct: Product = new Product();
-  showComponent = 'list';
-  prod: Product = null;
 
+  $products: Observable <Product []>;
+  products: Product [];
+  showListForm: string = 'list'; 
+  showForm = true;
+  showImage = true;
+  errorMessage = 'ta le erro!!';
+  block = false;
+  componentes: any;
+  
+  @Input() items: {
+    header: string,
+    content: string
+  }[] = [];
+
+  @Input() mode: 'card' | 'list' = 'card';
+  
+  /* @ViewChild('dynamic', { 
+    read: ViewContainerRef 
+  }) viewContainerRef: ViewContainerRef;
+ */
   constructor( private productoService: ProductoService, private router: Router ) { }
 
    ngOnInit(): void {
     this.getProductos();
   }
-
+  
   getProductos(): void {
-     this.productoService.getProductos().subscribe(
-       (dato) => {this.products = dato;
+    // this.productoService.getProductos().subscribe(
+      // (products: Array<Product>) => this.products = products
+     /*  ( json ) => {
+        this. products  = json;
+        console.log( this. products);
       }
-    ); 
+    ); */
   }
-
-  showPage(obj: any): string {
-    console.log(obj);
-    this.showComponent = obj.page;
-    if (this.showComponent === 'detail') {
-      this.detailProduct = obj.product;
-    } else if (this.showComponent === 'list') {
-
-    } else if (this.showComponent === 'form') {
-      if (obj.product) {
-        this.prod = obj.product;
-      } else {
-        this.prod = null;
-      }
-    }
-
-    return this.showComponent;
-  } 
- /*  showPage(obj: any): string {
-    console.log(obj);
-    this.showComponent = obj.page;
-    if (this.showComponent === 'detail') {
-      this.detailProduct = obj.producto;
-    } else if (this.showComponent === 'list') {
-
-    } else if (this.showComponent === ' form ') {
-      if (obj.producto) {
-        this.prod = obj.producto;
-      } else {
-        this.prod = null;
-      }
-    }
-    return this.showComponent;
-  } */
-
-  back(): void {
-    this.router.navigate(['/']);
-  }
-
+ 
   eliminar(id: string) {
     // console.log(id);
     // this.productoService.deleteProducto(id);
@@ -77,34 +55,27 @@ export class ProductComponent implements OnInit {
     // this.router.navigate(['producto/add']);
     // routerLink="/producto/edit/{{p.id}}"
   }
-  /* onSubmitForm(form: any): void {
-  } */
+  onSubmitForm(form: any): void {
+  }
 
+  
   sayHello() {
     alert('Digo hola a toda la hinchada');
   }
-}
-
-/*   back() {
-    this.router.navigateByUrl('home');
-  } */
-/*   detailProduct: Product = {
-    id: 0,
-    nombre: '',
-    imagen: '',
-    descripcion: '',
-    tmstmp: new Date() ,
-  }; */
-  /* detalProduct: Product = new Prduct; */
-/*   showListForm = 'list';
-  showImage = true;
-  errorMessage = 'ta le erro!!'; */
- /*  block = false; */
- /* 
   cambioImage(): void {
     this.showImage = !this.showImage;
   }
-  ndate() {
+  ndate(){
     this.block = !this.block;
+  }
+  showPage( page: string ): string {
+    this.showListForm  =  page ;
+    return  this.showListForm ;
+  }
+/*   back() {
+    this.router.navigateByUrl('home');
   } */
-  
+  back(): void {
+    this.router.navigate(['/']);
+  }
+}

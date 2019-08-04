@@ -1,60 +1,51 @@
 
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { ProductoService } from './services/producto.service';
-import { EmployeeService } from './services/employee.service';
-
+import { NgModule} from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { RouterModule, Routes } from '@angular/router';
-
-import { SharedModule } from './shared/shared.module';
+import { AppComponent } from './app.component';
+/* import { NavigationComponent } from './shared/navigation/navigation.component'; */
 import { ProductModule } from './pages/product/product.module';
-/* 
-import { EmployeeModule } from './pages/employee/employee.module';
-import { ShippingModule} from './pages/shipping/shipping.module';
-import { SaleModule} from './pages/sale/sale.module';
-import { BuyModule} from './pages/buy/buy.module';
-import { ClientModule } from './pages/client/client.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
- */
-const PAGES_MODULES = [
-  ProductModule,
-  SharedModule
-];
+import {ProductoService} from './services/producto.service';
+import { HomeComponent } from './pages/home/home.component';
+import { DocumentsComponent } from './pages/employee/components/documents/documents.component';
+import { EmployeeComponent } from './pages/employee/containers/employee/employee.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { ContainersComponent } from './pages/shipping/containers/containers.component';
+import { ShippingListComponent } from './pages/shipping/components/shipping-list/shipping-list.component';
+import { ShippingAddComponent } from './pages/shipping/components/shipping-add/shipping-add.component';
+import { EmployeeService } from './services/employee.service';
+import { FooterComponent } from './shared/footer/footer.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    /* NavigationComponent, */
+    HomeComponent,
+    DocumentsComponent,
+    EmployeeComponent,
+    HeaderComponent,
+    FooterComponent,
+    SidebarComponent,
+    ContainersComponent,
+    ShippingListComponent,
+    ShippingAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    ...PAGES_MODULES
-
-    /* EmployeeModule,
-    ShippingModule,    
-    SaleModule,
-    BuyModule,
-    ClientModule,
-    BrowserAnimationsModule */
+    ProductModule,
+    ReactiveFormsModule
   ],
   providers: [
     ProductoService,
     EmployeeService
   ],
-  bootstrap: [AppComponent],
-
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
-
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

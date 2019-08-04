@@ -6,43 +6,45 @@
     </h3>
 
   </div>
-  <table class=" table-responsive " border="2" *ngIf='productPrueba && productPrueba.length; else cargando '>
+  <table class=" table-responsive " border="2" *ngIf='productPrueba && productPrueba.length  '>
     <thead>
       <tr>
         <th> Nombre</th>
-        <th> Descrpción</th>
+        <th> Descrión</th>
         <th> Imagen</th>
         <th> Hora</th>
+        <th> Operación</th>
+        <th>5 Star Rating</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let p of products" (click) = "showDetail(p)"> AproductPrueba
+      <tr *ngFor="let p of productPrueba">
         <td>{{p.nombre}}
         </td>
         <td>{{p.descripcion}}
         </td>
-        <td><img [src]="p.imagen == '' ? '/assets/no_image-128.png' : p.imagen" class="card-img-top">
-          <!-- <img [src]="p.imagen == '' ? '../../../../../assets/no_image-128.png' : p.imagen" class="card-img-top">-->
-          <!-- <img [src]="p.imagen " class="card-img-top"> -->
+        <td>
+          <!-- <img [src]="p.imagen ==''? '/assets/no_image-128.png"> -->
+          <img src="../../../../../assets/no_image-128.png" [style.width.px]='imageWidth'
+            [style.margin.px]='imageMargin'>
         </td>
         <td>
-          {{p.fecha | date: 'yyy-MM-dd'}}
+          {{p.fecha}}
         </td>
         <td>
-         <!--  <button (click)=" showDetail() " class="mr-2 mt-4"> <i class="fas fa-info-circle mr-2"
+          <button (click)=" showDetail() " class="mr-2 mt-4"> <i class="fas fa-info-circle mr-2"
               style="color: rgb(173, 226, 28)"></i> </button>
-          --> <!--           <button (click)="showForm()" id="btnForma"> <i class="fas fa-plus mr-3 " style="color: rgb(173, 226, 28)"></i></button>
+          <!--           <button (click)="showForm()" id="btnForma"> <i class="fas fa-plus mr-3 " style="color: rgb(173, 226, 28)"></i></button>
  -->
+        </td>
+        <td>
+          <!--    <pm-star [rating]='product.starRating'
+                       (ratingClicked)='onRatingClicked($event)'>
+              </pm-star> -->
         </td>
       </tr>
     </tbody>
   </table>
-
-  <!-- MAndar DATOS -->
- <!-- <select [(ngModel)]='ver' (ngModel)= "onChange($event)" name="slcDato" id="slcDato">
-   <option [ngValue]='detail'>detail</option>
-   <option [ngValue]='form'>form</option>
- </select>  -->
 
   <!-- <button (click)="showForm()" id="btnForma"> <i class="fa fa-leaf mr-3 " style="color: rgb(173, 226, 28)"></i>Show form
   </button> -->
@@ -52,9 +54,3 @@
     </div> -->
 
 </div>
-
-<ng-template #cargando>
-    <div>       
-      <i class="fa fa-spin fa-spinner fa-3x"></i><h4>Whait a moment please..</h4>
-    </div>
-  </ng-template>

@@ -4,9 +4,8 @@ import pool from '../database';
 class ProductoController {
     
     public async list (req:Request,res:Response){
-       /*  const prods = await pool.query('SELECT * FROM producto');
-        res.json({prods}); */
-        res.json(await pool.query('SELECT * FROM producto'));
+        const prods = await pool.query('SELECT * FROM producto');
+        res.json({prods});
     }
     
     public async create (req:Request,res:Response): Promise<any>{
