@@ -40,11 +40,11 @@ const APP_CONTAINERS_PRODUCTS = [
     CommonModule,
     SharedModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
     /* 
     BrowserModule,
-    ReactiveFormsModule,
-    FormsModule, */
+    ReactiveFormsModule, */
     
     
   ]
