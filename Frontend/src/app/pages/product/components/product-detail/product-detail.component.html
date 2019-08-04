@@ -1,13 +1,11 @@
 <div class="container ">
-    <h3 class="card-header col-md-12 text-center"></h3>  <!-- {{title + ': ' + product?.productName}}   -->
-    <div class="col-md-12">
-        <p>DEBE MOSTRAR EL DETALLE</p>
+    <h3 class="card-header col-md-12 text-center"></h3> 
         <div class="col-md-2">
             <div class="crd-text-center">
                 <div class="card-header d-flex justify-content-between  align-center text-white bg-dark">
-                    
                     <button class="btn btn-danger">
                         <i class="far fa-trash-alt"></i>
+                        <h3>{{detailProduct.nombre}}</h3> 
                     </button>
                 </div>
                 <img [src]="detailProduct.imagen" class="card-img-top">
@@ -22,5 +20,4 @@
         </button>
 
         <!-- <a routerLink="/products" class="btn btn-info btn-block" class="btn btn-info btn-block ">EDITAR </a> -->
-    </div>
 </div>

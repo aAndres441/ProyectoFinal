@@ -29,6 +29,7 @@ const BASE_MODULES = [
   ReactiveFormsModule,
   RouterModule,
   FormsModule
+  
 ]
 
 @NgModule({

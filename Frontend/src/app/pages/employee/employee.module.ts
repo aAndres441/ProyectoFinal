@@ -6,7 +6,7 @@ import {
   EmployeeListComponent
   } from './components';
 
-import { EmployeeComponent } from './containers';
+import { EmployeeComponent } from './container';
 import { DocumentsComponent } from './components/documents/documents.component';
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
 import { AddressComponent } from './components/address/address.component';

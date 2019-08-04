@@ -5,7 +5,6 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {ProductoService} from './services/producto.service';
-import { ThemeModule } from './theme/theme.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeeService } from './services/employee.service';
@@ -14,7 +13,6 @@ import { SharedModule } from './shared/shared.module';
 
 const PAGES_MODULES = [
   ProductModule,
-  ThemeModule,
   SharedModule
 ];
 
