@@ -1,17 +1,17 @@
-<form class="form" formGroup="productForm">
+<form class="form" formGroup="productForm" >
   <div class="col-md-4 offset-md-2">
     <div class="card">
       <div class="card-header">Add Product</div>
       <div class="card-body">
           <div class="form-group">
             <div class="col-8">
-              <input type="text" class="form-control form-control-sm" formControlName="nombre" placeholder="Nombre" required autofocus >
+              <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre" required autofocus >
             </div>
             <div class="col-10">
-              <textarea type="text" class="form-control form-control-sm" formControlName="imagen" placeholder="Imagen" required > </textarea>      
+              <textarea type="text" class="form-control" formControlName="imagen" placeholder="Imagen" required > </textarea>      
             </div>
             <div class="col-10">
-              <textarea  type="text" class="form-control form-control-sm" formControlName="descripcion" placeholder="Descripcion" required ></textarea>
+              <textarea  type="text" class="form-control" formControlName="descripcion" placeholder="Descripcion" required ></textarea>
             </div>
           </div>
           <button class="btn btn-primary btn-sm col-3" (click)="onSubmit()" ><i class="fa fa-save"></i>Enviar</button>

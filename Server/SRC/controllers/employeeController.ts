@@ -4,12 +4,13 @@ import pool from '../database';
 class EmployeeController {
     
     public async list (req:Request,res:Response){
-        const emp = await pool.query('SELECT * FROM empleado');
-        res.json({emp});
+        res.json(await pool.query('SELECT p.* FROM empleado e join persona p on e.id = p.id'));
     }
     
     public async create (req:Request,res:Response): Promise<any>{
-        await pool.query('INSERT INTO empleado set ?',[req.body]);
+        //await pool.query('INSERT INTO empleado set ?',[req.body]);
+        await pool.query('insert into persona set ? ',[req.body]);
+        //await pool.query('insert into empleado set @@identity'); //values (@@identity)
         res.json({message:'Empleado creado y guardado!'})
     }
 

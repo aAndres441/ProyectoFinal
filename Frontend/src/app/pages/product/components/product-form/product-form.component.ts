@@ -11,7 +11,7 @@ export class ProductFormComponent implements OnInit {
   @Input() product : Product;
   @Output() showComponent = new EventEmitter<any>();
 
-  public productForm:FormGroup;
+  productForm:FormGroup;
 
   constructor(private fb : FormBuilder) { }
 

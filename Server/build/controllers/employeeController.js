@@ -15,13 +15,14 @@ const database_1 = __importDefault(require("../database"));
 class EmployeeController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const emp = yield database_1.default.query('SELECT * FROM empleado');
-            res.json({ emp });
+            res.json(yield database_1.default.query('SELECT p.* FROM empleado e join persona p on e.id = p.id'));
         });
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('INSERT INTO empleado set ?', [req.body]);
+            //await pool.query('INSERT INTO empleado set ?',[req.body]);
+            yield database_1.default.query('insert into persona set ? ', [req.body]);
+            //await pool.query('insert into empleado set @@identity'); //values (@@identity)
             res.json({ message: 'Empleado creado y guardado!' });
         });
     }
