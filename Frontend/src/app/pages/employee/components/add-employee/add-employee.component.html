@@ -1,0 +1,31 @@
+
+
+<div class="card">
+  <h3 class="card-header col-md-12 text-center">{{title}}</h3>
+
+  <form class="card-body" (submit)="addEmployee(nombre)">
+
+    <div class="form-group">
+      <input type="text" #nombre name="nombre" class="form-control form-control-sm" placeholder="* Name" autofocus required
+        minlength="4">
+    </div>
+
+    <div class="form-group">
+      <input type="text" #lastname class="form-control form-control-sm" placeholder="* Last Name" required>
+    </div>
+
+    <app-address> </app-address>
+    <app-documents></app-documents>
+
+    <div class="class-row mx-0">  
+          <button id="btncncel" class="col-auto  mr-2 mt-4" (click)="cancel()"> <i class="far fa-times-circle mr-2"
+            style="color:rgb(10, 100, 33)"></i>Cancelar</button>
+       
+          <button id="btnAdd" class="col-auto  mr-2 mt-4" (click)="addEmployee()"><i class="far fa-check-circle mr-2" 
+            style="color: rgb(10, 100, 33)"></i>Agregar</button>
+       
+      </div>
+
+
+  </form>
+</div>

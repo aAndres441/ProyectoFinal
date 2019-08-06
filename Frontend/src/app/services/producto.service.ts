@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient } from '@angular/common/http';//para las peticiones
+import {HttpClient } from '@angular/common/http'; // para las peticiones
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
@@ -12,8 +12,14 @@ import { Product } from '../pages/product/model/product.model'
 
 export class ProductoService {
 
+<<<<<<< HEAD
   private productSerializer : ProductSerializer;
   private products : Product[] = [];
+=======
+  private producto: ProductSerializer;
+   private products: Product [] = [];
+
+>>>>>>> e9b080db955db77124a963138cfc4d1fecb6f047
   constructor(private http: HttpClient) {
     /* this.getProductos().subscribe(
       prods => {

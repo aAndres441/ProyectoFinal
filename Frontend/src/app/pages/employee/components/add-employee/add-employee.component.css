@@ -1,0 +1,46 @@
+h4, h3{
+    color: rgb(226, 28, 183);
+    
+}
+#btnAdd, #btncncel {
+    background-color: whitesmoke;
+    border-color: greenyellow;
+    font-size: 18px;
+    text-align: center;
+}
+.btn{
+    border-radius: 10px;
+    background-color: whitesmoke;
+    border-color: greenyellow;
+    font-size: 22px;
+    text-align: center;
+    align-content: center;
+}
+
+#sepa{
+    background-color: greenyellow;
+    size: 10px;
+}
+.card{
+    
+    border-top-color: greenyellow;
+    top: 10px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+
+}
+
+.form-group{
+    background: rgb(203, 236, 175) ;
+    padding : 5px;
+    margin  : 0;
+    position: relative;
+}
+
+.class{
+    padding : 20px;
+    margin  : 5px;
+}
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }

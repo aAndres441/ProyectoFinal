@@ -1,0 +1,14 @@
+.card{
+    
+    border-top-color: greenyellow;
+    top: 10px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+
+}
+h4, h3{
+    color: mediumseagreen;
+}
+.card-header{
+    background-color: rgb(189, 235, 219);
+}
