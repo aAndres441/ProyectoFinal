@@ -2,6 +2,7 @@ import { ProductListComponent,ProductFormComponent,ProductDetailComponent } from
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductComponent } from './container/index';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 const APP_COMPONENTS_PRODUCTS = [
   ProductFormComponent,
@@ -18,7 +19,9 @@ const APP_CONTAINERS_PRODUCTS = [
     ...APP_CONTAINERS_PRODUCTS
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class ProductModule { }

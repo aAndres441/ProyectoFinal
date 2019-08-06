@@ -25,4 +25,7 @@ export class ProductListComponent implements OnInit {
     if(!p) p = new Product();
     return this.showComponent.emit({"page":"form","product":p});
   }
+  edit(p:Product){
+    return this.showComponent.emit({"page":"form","product":p});
+  }
 }
